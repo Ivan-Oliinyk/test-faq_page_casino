@@ -1,7 +1,13 @@
 import Image from "next/image";
 import Heading from "../../heading/Heading";
 import s from "../../../styles/modules/faq/faq-header.module.scss";
-const FaqHeader = ({ title }: { title: string }) => {
+import { FC } from "react";
+
+type FaqHeaderType = {
+  title: string;
+};
+
+const FaqHeader: FC<FaqHeaderType> = ({ title }) => {
   return (
     <div className={s.wrapper}>
       <Heading text={title} />

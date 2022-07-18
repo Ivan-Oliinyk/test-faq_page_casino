@@ -1,0 +1,20 @@
+.form {
+  input {
+    padding: 7px;
+    border: 1px solid var(--blue-color-2);
+    border-radius: 6px;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    color: var(--blue-color-2);
+    transition: border 0.3s linear;
+
+    &::placeholder {
+      color: var(--blue-color-2);
+    }
+
+    &:hover,
+    &:focus {
+      border: 1px solid var(--blue-color-1);
+    }
+  }
+}

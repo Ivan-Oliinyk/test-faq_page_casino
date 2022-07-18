@@ -2,4 +2,26 @@
   max-width: 1100px;
   padding: 2.8rem;
   background-color: var(--white-color);
+
+  .content {
+    .content__header {
+      margin-bottom: 2.8rem;
+      display: flex;
+      justify-content: space-between;
+
+      h2 {
+        color: var(--blue-color-1);
+      }
+    }
+
+    .content__body {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      & > div {
+        max-width: 32rem;
+      }
+    }
+  }
 }
