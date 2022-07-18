@@ -13,8 +13,7 @@ const dataItems = [
   {
     id: 1,
     title: "What are lorem ipsum dolor sit amet lorem ipsum?",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
     id: 2,
@@ -37,8 +36,7 @@ const dataItems = [
   {
     id: 5,
     title: "What are lorem ipsum dolor sit amet lorem ipsum?",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
   },
   {
     id: 6,
@@ -61,8 +59,7 @@ const dataItems = [
   {
     id: 9,
     title: "What are lorem ipsum dolor sit amet lorem ipsum?",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
   },
 ];
 
@@ -75,7 +72,10 @@ const FaqBlock: FC<FaqBlockType> = ({ showHeader = true }) => {
           <Heading text={"FAQ lorem ipsum h2"} tag={"h2"} />
           <SearchForm text={"Search in FAQ..."} />
         </div>
-        <div className={s.content__body}>
+        <div
+          className={s.content__body}
+          style={{ maxHeight: `cacl(130px * ${dataItems.length / 3})` }}
+        >
           {dataItems.map(({ id, title, description }) => (
             <FaqItem key={id} title={title} description={description} />
           ))}
