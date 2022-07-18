@@ -1,0 +1,28 @@
+.wrapper {
+  margin-bottom: 4.2rem;
+
+  h1 {
+    margin-bottom: 2rem;
+    color: var(--blue-color-1);
+    font-size: 4.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .content {
+    display: flex;
+
+    .img__wrapper {
+      display: flex;
+      justify-content: center;
+      min-width: 200px;
+    }
+
+    .descr {
+      margin: 22px 0;
+      font-size: 2rem;
+      font-weight: 400;
+      line-height: 2.4rem;
+    }
+  }
+}
