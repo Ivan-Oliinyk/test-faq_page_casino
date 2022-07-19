@@ -7,6 +7,12 @@ type FaqItemType = { title: string; description: string };
 const FaqItem: FC<FaqItemType> = ({ title, description }) => {
   const [showMore, setShowMore] = useState<boolean>(false);
 
+  const isLongString = (str: string = description, strLength: number = 170) =>
+    str.length > strLength;
+
+  const toCutString = (str: string, strLength: number = 170) =>
+    str.length > strLength ? str.slice(0, strLength) + "..." : str;
+
   return (
     <div className={s.wrapper}>
       <div className={s["header-wrapper"]}>
@@ -15,18 +21,24 @@ const FaqItem: FC<FaqItemType> = ({ title, description }) => {
         </svg>
         <Heading text={title} tag="h3" />
       </div>
-      <p className={!showMore ? s["hide-more"] : ""}>{description}</p>
-      <button type="button" onClick={() => setShowMore(!showMore)}>
-        {showMore ? (
-          <svg className={s["btn-icon"]}>
-            <use href="/sprite.svg#icon-plus"></use>
-          </svg>
-        ) : (
-          <svg className={s["btn-icon"]}>
-            <use href="/sprite.svg#icon-minus"></use>
-          </svg>
-        )}
-      </button>
+
+      {/* <p className={!showMore ? s["hide-more"] : ""}>
+        {!showMore ? toCutString(description) : description}
+      </p> */}
+      <p>{!showMore ? toCutString(description) : description}</p>
+      {isLongString() && (
+        <button type="button" onClick={() => setShowMore(!showMore)}>
+          {showMore ? (
+            <svg className={s["btn-icon"]}>
+              <use href="/sprite.svg#icon-plus"></use>
+            </svg>
+          ) : (
+            <svg className={s["btn-icon"]}>
+              <use href="/sprite.svg#icon-minus"></use>
+            </svg>
+          )}
+        </button>
+      )}
     </div>
   );
 };

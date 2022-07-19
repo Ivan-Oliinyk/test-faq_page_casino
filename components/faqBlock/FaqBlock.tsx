@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import FaqHeader from "./faqHeader/FaqHeader";
 import FaqItem from "./faqItem/FaqItem";
 import Heading from "../heading/Heading";
@@ -11,11 +11,18 @@ type FaqBlockType = {
   showHeader?: boolean;
 };
 
-const dataItems = [
+type DataType = {
+  id: number | string;
+  title: string;
+  description: string;
+};
+
+const dataItems: DataType[] = [
   {
     id: 1,
     title: "What are lorem ipsum dolor sit amet lorem ipsum?",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
   },
   {
     id: 2,
@@ -38,7 +45,8 @@ const dataItems = [
   {
     id: 5,
     title: "What are lorem ipsum dolor sit amet lorem ipsum?",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
   },
   {
     id: 6,
@@ -76,45 +84,68 @@ const dataItems = [
 ];
 
 const FaqBlock: FC<FaqBlockType> = ({ showHeader = true }) => {
-  const { width, height }: ISize = useResize();
+  const [context, setContext] = useState([]);
+  const { width }: ISize = useResize();
 
   const toChunkArray = (data: Array<any>, col: number) =>
     data.reduce((acc, _, idx) => {
       if (idx < col) {
-        acc[idx] = data.filter((_, index) => !((index - idx) % col));
+        col === 1
+          ? (acc = data.filter((_, index) => !((index - idx) % col)))
+          : (acc[idx] = data.filter((_, index) => !((index - idx) % col)));
       }
 
       return acc;
     }, []);
 
-  let content = [];
+  useEffect(() => {
+    if (width! >= 1400) {
+      setContext(toChunkArray(dataItems, 3));
+    }
 
-  if (width! >= 1400) {
-    content = toChunkArray(dataItems, 3);
-  }
+    if (width! < 1400) {
+      setContext(toChunkArray(dataItems, 2));
+    }
 
-  if (width! < 1400) {
-    content = toChunkArray(dataItems, 2);
-  }
-
-  if (width! < 768) {
-    content = toChunkArray(dataItems, 1);
-  }
-
-  console.log(content);
+    if (width! < 768) {
+      setContext(toChunkArray(dataItems, 1));
+    }
+  }, [width]);
 
   return (
     <div className={s.wrapper}>
       <div>{showHeader && <FaqHeader title={"FAQ h1"} />}</div>
       <div className={s.content}>
-        <div className={s.content__header}>
+        <div className={s["content-header"]}>
           <Heading text={"FAQ lorem ipsum h2"} tag={"h2"} />
           <SearchForm text={"Search in FAQ..."} />
         </div>
-        <div className={s.content__body}>
-          {dataItems.map(({ id, title, description }) => (
-            <FaqItem key={id} title={title} description={description} />
-          ))}
+        <div className={s["content-body"]}>
+          {context && context.length > 3 ? (
+            <div className={s["content-body"]}>
+              {context.map((item: any) => (
+                <FaqItem
+                  key={item.id}
+                  title={item.title}
+                  description={item.description}
+                />
+              ))}
+            </div>
+          ) : (
+            <div className={s["content-body-wrapper"]}>
+              {context.map((arr: Array<DataType>, idx) => (
+                <div key={idx} className={s["content-body"]}>
+                  {arr.map((el: DataType) => (
+                    <FaqItem
+                      key={el.id}
+                      title={el.title}
+                      description={el.description}
+                    />
+                  ))}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>

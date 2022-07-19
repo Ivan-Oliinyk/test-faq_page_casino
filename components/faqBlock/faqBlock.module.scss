@@ -4,7 +4,7 @@
   background-color: var(--white-color);
 
   .content {
-    .content__header {
+    .content-header {
       display: flex;
       justify-content: space-between;
 
@@ -13,10 +13,25 @@
       }
     }
 
-    .content__body {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      column-gap: 4.2rem;
+    // .content-body {
+    //   display: grid;
+    //   grid-template-columns: repeat(3, 1fr);
+    //   column-gap: 4.2rem;
+    // }
+
+    .content-body-wrapper {
+      display: flex;
+      width: 100%;
+    }
+
+    .content-body {
+      min-width: 32rem;
+      display: flex;
+      flex-direction: column;
+
+      &:not(:last-of-type) {
+        margin-right: 4.2rem;
+      }
     }
   }
 }

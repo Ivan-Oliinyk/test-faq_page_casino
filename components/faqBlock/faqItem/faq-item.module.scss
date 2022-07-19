@@ -3,6 +3,7 @@
   margin-top: 2.8rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--blue-color-2);
+  min-height: 14.5rem;
 
   .header-wrapper {
     display: flex;
@@ -25,16 +26,17 @@
     font-size: 1.6rem;
     line-height: 1.8rem;
     font-weight: 400;
-    min-height: 7.5rem;
+    // min-height: 7.5rem;
 
-    &.hide-more {
-      max-height: 7.5rem;
-      display: -webkit-box;
-      -webkit-line-clamp: 4;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
+    // &.hide-more {
+    // max-height: 7.5rem;
+
+    // display: -webkit-box;
+    // -webkit-line-clamp: 4;
+    // -webkit-box-orient: vertical;
+    // overflow: hidden;
+    // text-overflow: ellipsis;
+    // }
   }
 
   button {
