@@ -1,8 +1,8 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import FaqHeader from "./faqHeader/FaqHeader";
 import FaqItem from "./faqItem/FaqItem";
 import Heading from "../heading/Heading";
-import s from "./faq-block.module.scss";
+import s from "./faqBlock.module.scss";
 import SearchForm from "../searchForm/SearchForm";
 import { ISize } from "../../types/hooksType";
 import { useResize } from "../../hooks/useResize";
@@ -63,10 +63,45 @@ const dataItems = [
     title: "What are lorem ipsum dolor sit amet lorem ipsum?",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
   },
+  {
+    id: 10,
+    title: "What are lorem ipsum dolor sit amet lorem ipsum?",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+  },
+  {
+    id: 11,
+    title: "What are lorem ipsum dolor sit amet lorem ipsum?",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+  },
 ];
 
 const FaqBlock: FC<FaqBlockType> = ({ showHeader = true }) => {
-  const size: ISize = useResize();
+  const { width, height }: ISize = useResize();
+
+  const toChunkArray = (data: Array<any>, col: number) =>
+    data.reduce((acc, _, idx) => {
+      if (idx < col) {
+        acc[idx] = data.filter((_, index) => !((index - idx) % col));
+      }
+
+      return acc;
+    }, []);
+
+  let content = [];
+
+  if (width! >= 1400) {
+    content = toChunkArray(dataItems, 3);
+  }
+
+  if (width! < 1400) {
+    content = toChunkArray(dataItems, 2);
+  }
+
+  if (width! < 768) {
+    content = toChunkArray(dataItems, 1);
+  }
+
+  console.log(content);
 
   return (
     <div className={s.wrapper}>
