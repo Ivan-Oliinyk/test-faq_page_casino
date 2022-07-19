@@ -1,10 +1,15 @@
 @use "reset";
 @use "variables";
+@use "mixins" as m;
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
 
 * {
   box-sizing: border-box;
 }
+
+// h1 {
+//   @include m.font($fs: 62px, $fw: 700, $lh: 16px);
+// }
 
 html {
   font-size: 10px;

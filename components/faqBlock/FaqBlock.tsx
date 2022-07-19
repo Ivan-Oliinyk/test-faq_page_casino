@@ -74,7 +74,7 @@ const FaqBlock: FC<FaqBlockType> = ({ showHeader = true }) => {
         </div>
         <div
           className={s.content__body}
-          style={{ maxHeight: `cacl(130px * ${dataItems.length / 3})` }}
+          
         >
           {dataItems.map(({ id, title, description }) => (
             <FaqItem key={id} title={title} description={description} />

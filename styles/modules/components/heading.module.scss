@@ -1,5 +1,8 @@
-h1.title {
-}
+// @use "styles/mixins" as m;
+
+// .title {
+//   @include m.font($fs: 12px, $fw: 700, $lh: 16px);
+// }
 
 h2.title {
   font-size: 2.8rem;

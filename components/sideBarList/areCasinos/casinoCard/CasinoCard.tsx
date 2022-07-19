@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { ITopCasino } from "../../../../types/ITopCasino";
-import s from "../../../../styles/modules/areCasinos/casinoCard.module.scss";
+import s from "../../../../styles/modules/sideBar/areCasinos/casinoCard.module.scss";
 import Image from "next/image";
 import Heading from "../../../heading/Heading";
 
@@ -9,7 +9,7 @@ type CasinoCardType = { data: ITopCasino };
 const CasinoCard: FC<CasinoCardType> = ({ data }) => {
   return (
     <div className={s.card}>
-      <Image src={data.imageSrc} width={80} height={60} />
+      <Image src={data.imageSrc} width={80} height={60} alt={data.title} />
 
       <div className={s.content}>
         <Heading tag={"h3"} text={data.title}></Heading>

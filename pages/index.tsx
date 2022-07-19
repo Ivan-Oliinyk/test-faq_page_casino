@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import Link from "next/link";
 // import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
@@ -10,7 +11,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <h1>Home</h1>
+        <Link href="/faq">Faq</Link>
       </main>
 
       <footer></footer>
