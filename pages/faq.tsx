@@ -3,7 +3,7 @@ import Head from "next/head";
 import { FC, Fragment } from "react";
 import FaqBlock from "../components/faqBlock/FaqBlock";
 import SideBarList from "../components/sideBarList/SideBarList";
-import s from "../styles/modules/pages/faq-page.module.scss";
+import s from "./faqPage.module.scss";
 
 type FaqTypes = {
   title: string;

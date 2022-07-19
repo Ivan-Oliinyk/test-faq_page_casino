@@ -1,5 +1,5 @@
 import { FC } from "react";
-import s from "../../styles/modules/components/search-form.module.scss";
+import s from "./search-form.module.scss";
 
 type SearchFormType = {
   text: string;

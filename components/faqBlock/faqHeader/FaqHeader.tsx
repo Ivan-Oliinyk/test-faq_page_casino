@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Heading from "../../heading/Heading";
-import s from "../../../styles/modules/faq/faq-header.module.scss";
+import s from "./faq-header.module.scss";
 import { FC } from "react";
 
 type FaqHeaderType = {
@@ -12,7 +12,7 @@ const FaqHeader: FC<FaqHeaderType> = ({ title }) => {
     <div className={s.wrapper}>
       <Heading text={title} />
       <div className={s.content}>
-        <div className={s.img__wrapper}>
+        <div className={s["img-wrapper"]}>
           <Image src="/images/faq/faq.png" alt="faq" width={200} height={140} />
         </div>
         <div className={s.descr}>

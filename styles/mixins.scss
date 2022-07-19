@@ -1,4 +1,4 @@
-@use "variables" as v;
+@use "styles/variables" as v;
 
 @function bp($bpName) {
   @return map-get(v.$breakpoints, $bpName);

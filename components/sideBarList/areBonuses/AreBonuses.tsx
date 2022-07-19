@@ -1,5 +1,4 @@
 import React from "react";
-import s from "../../../styles/modules/sideBar/areBonuses/areBonuses.module.scss";
 import { BonusCardType } from "../../../types/topBonusesType";
 import Heading from "../../heading/Heading";
 import BonusCard from "./bonusCard/BonusCard";
@@ -65,7 +64,7 @@ const mockData: BonusCardType[] = [
 
 const AreBonuses = () => {
   return (
-    <div className={s.wrapper}>
+    <div>
       <Heading tag="h2" text={"Top Bonuses"} />
       <div>
         {mockData.map((item) => (

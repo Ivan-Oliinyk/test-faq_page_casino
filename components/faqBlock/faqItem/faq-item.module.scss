@@ -4,11 +4,11 @@
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--blue-color-2);
 
-  .header__wrapper {
+  .header-wrapper {
     display: flex;
   }
 
-  .header__icon {
+  .header-icon {
     display: block;
     margin-right: 8px;
     width: 28px;
@@ -27,7 +27,7 @@
     font-weight: 400;
     min-height: 7.5rem;
 
-    &.hide__more {
+    &.hide-more {
       max-height: 7.5rem;
       display: -webkit-box;
       -webkit-line-clamp: 4;
@@ -42,7 +42,7 @@
     border: none;
     cursor: pointer;
 
-    .btn__icon {
+    .btn-icon {
       position: absolute;
       bottom: 0;
       right: 1.8rem;

@@ -2,8 +2,10 @@ import React, { FC } from "react";
 import FaqHeader from "./faqHeader/FaqHeader";
 import FaqItem from "./faqItem/FaqItem";
 import Heading from "../heading/Heading";
-import s from "../../styles/modules/faq/faq-block.module.scss";
+import s from "./faq-block.module.scss";
 import SearchForm from "../searchForm/SearchForm";
+import { ISize } from "../../types/hooksType";
+import { useResize } from "../../hooks/useResize";
 
 type FaqBlockType = {
   showHeader?: boolean;
@@ -64,6 +66,8 @@ const dataItems = [
 ];
 
 const FaqBlock: FC<FaqBlockType> = ({ showHeader = true }) => {
+  const size: ISize = useResize();
+
   return (
     <div className={s.wrapper}>
       <div>{showHeader && <FaqHeader title={"FAQ h1"} />}</div>
@@ -72,10 +76,7 @@ const FaqBlock: FC<FaqBlockType> = ({ showHeader = true }) => {
           <Heading text={"FAQ lorem ipsum h2"} tag={"h2"} />
           <SearchForm text={"Search in FAQ..."} />
         </div>
-        <div
-          className={s.content__body}
-          
-        >
+        <div className={s.content__body}>
           {dataItems.map(({ id, title, description }) => (
             <FaqItem key={id} title={title} description={description} />
           ))}

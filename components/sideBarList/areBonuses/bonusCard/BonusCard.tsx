@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React, { FC } from "react";
-import s from "../../../../styles/modules/sideBar/areBonuses/bonusCard.module.scss";
+import s from "./bonusCard.module.scss";
 import { BonusCardProps } from "../../../../types/topBonusesType";
 
 const BonusCard: FC<BonusCardProps> = ({ data }) => {

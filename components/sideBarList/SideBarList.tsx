@@ -1,6 +1,6 @@
 import React from "react";
 import AreCasinos from "./areCasinos/AreCasinos";
-import s from "../../styles/modules/sideBar/sideBar.module.scss";
+import s from "./sideBar.module.scss";
 import AreBonuses from "./areBonuses/AreBonuses";
 
 const SideBarList = () => {
