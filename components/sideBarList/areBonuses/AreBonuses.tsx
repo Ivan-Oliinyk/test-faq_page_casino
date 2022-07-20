@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
 import Heading from "../../heading/Heading";
 import BonusCard from "./bonusCard/BonusCard";
-import { fetchTopBonuses } from "../../../store/reducers/topBonuseReducer/TopBonusesActionCreator";
+import { fetchTopBonuses } from "../../../store/reducers/topBonusesReducer/TopBonusesActionCreator";
 
 const AreBonuses = () => {
   const { topBonuses, error, isLoading } = useAppSelector(

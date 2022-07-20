@@ -7,7 +7,7 @@ export const fakeDataFaq: IFaqDataType[] = [
     id: 1,
     title: "What are lorem ipsum  dolor sit amet lorem ipsum?",
     description:
-      "What</br> are <strong>lorem</strong> ipsum <i>dolor<i> sit </br>amet lorem ipsum?",
+      "What</br> <h1>are</h1> <h1>lorem</h1> ipsum <i>dolor<i> sit </br>amet lorem ipsum?",
   },
   {
     id: 2,

@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next";
 import React, { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
-import { fetchTopCasino } from "../../../store/reducers/topCasionReducer/ActionCreator";
+import { fetchTopCasino } from "../../../store/reducers/topCasinoReducer/ActionCreator";
 import Heading from "../../heading/Heading";
 import CasinoCard from "./casinoCard/CasinoCard";
 

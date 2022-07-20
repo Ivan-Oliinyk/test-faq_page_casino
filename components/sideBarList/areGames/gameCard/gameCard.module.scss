@@ -1,0 +1,61 @@
+@use "styles/mixins" as m;
+
+.card {
+  margin-bottom: 0.2rem;
+  display: flex;
+  background-color: var(--white-color);
+  border-radius: 0 0.6rem 0.6rem 0;
+
+  .content {
+    padding: 0.65rem 1.2rem;
+
+    .header-wrapper {
+      display: flex;
+      align-items: baseline;
+
+      h3 {
+        margin-right: 0.4rem;
+        color: var(--blue-color-3);
+        @include m.font(1.5rem, 700);
+      }
+
+      span {
+        color: var(--blue-color-1);
+        @include m.font(1rem, 600, 1.2);
+      }
+    }
+
+    .info-wrapper {
+      display: flex;
+    }
+
+    .info {
+      display: flex;
+
+      &:first-of-type {
+        margin-right: 0.8rem;
+      }
+    }
+
+    .rating {
+      margin-right: 0.4rem;
+
+      svg {
+        width: 3.1rem;
+        height: 3.1rem;
+      }
+    }
+
+    .info-descr {
+      div:nth-child(1) {
+        @include m.font(2.1rem, 700);
+        color: var(--blue-color-3);
+      }
+
+      div:nth-child(2) {
+        @include m.font(1rem, 600);
+        color: var(--blue-color-1);
+      }
+    }
+  }
+}
