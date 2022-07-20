@@ -6,29 +6,44 @@ import s from "./faqBlock.module.scss";
 import SearchForm from "../searchForm/SearchForm";
 import { ISize } from "../../types/hooksType";
 import { useResize } from "../../hooks/useResize";
-import { DataType, FaqBlockType } from "../../types/faqBlockType";
+import {
+  DataType,
+  FaqBlockType,
+  HandleOnChangeType,
+  SearchFormType,
+} from "../../types/faqBlockType";
 import { toChunkArray } from "../../utils/toChunkArray";
 import { generateColumnCount } from "../../utils/generateColumnCount";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { fetchFaq } from "../../store/reducers/faqReducer/FaqActionCreator";
+import { filterBySearch } from "../../utils/filterBySearch";
 
 const FaqBlock: FC<FaqBlockType> = ({ showHeader = true }) => {
   const { faqBlock, isLoading, error } = useAppSelector(
     (state) => state.faqBlockReducer
   );
 
-  const [context, setContext] = useState([]);
+  const [search, setSearch] = useState("");
+  const [data, setContext] = useState([]);
   const { width }: ISize = useResize();
 
   //use with your data! Uncomment and add you endpoint in ./store/reducers/faqReducer/FaqActionCreator
   // const dispatch = useAppDispatch();
 
   useEffect(() => {
-    setContext(toChunkArray(faqBlock, generateColumnCount(width)));
+    setContext(
+      toChunkArray(filterBySearch(faqBlock, search), generateColumnCount(width))
+    );
 
     //use in with your data! Uncomment and add you endpoint in ./store/reducers/faqReducer/FaqActionCreator
     // dispatch(fetchFaq());
-  }, [width]);
+  }, [width, search]);
+
+  const handleOnChange: HandleOnChangeType = (e) => {
+    e.preventDefault();
+
+    setSearch(e.target.value);
+  };
 
   return (
     <div className={s.wrapper}>
@@ -47,12 +62,15 @@ const FaqBlock: FC<FaqBlockType> = ({ showHeader = true }) => {
       <div className={s.content}>
         <div className={s["content-header"]}>
           <Heading text={"FAQ lorem ipsum h2"} tag={"h2"} />
-          <SearchForm text={"Search in FAQ..."} />
+          <SearchForm
+            text={"Search in FAQ..."}
+            handleOnChange={handleOnChange}
+          />
         </div>
         <div className={s["content-wrapper"]}>
-          {context && context.length > 3 ? (
+          {data && data.length > 3 ? (
             <div className={s["content-body"]}>
-              {context.map((item: DataType) => (
+              {data.map((item: DataType) => (
                 <FaqItem
                   key={item.id}
                   title={item.title}
@@ -62,7 +80,7 @@ const FaqBlock: FC<FaqBlockType> = ({ showHeader = true }) => {
             </div>
           ) : (
             <div className={s["content-body-wrapper"]}>
-              {context.map((arr: Array<DataType>, idx) => (
+              {data.map((arr: Array<DataType>, idx) => (
                 <div key={idx} className={s["content-body"]}>
                   {arr.map((el: DataType) => (
                     <FaqItem

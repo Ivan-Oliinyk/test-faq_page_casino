@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
-// import styles from "../styles/Home.module.css";
+import Heading from "../components/heading/Heading";
 
 const Home: NextPage = () => {
   return (
@@ -11,7 +11,11 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <Link href="/faq">Faq</Link>
+        <Link href="/faq">
+          <a>
+            <Heading tag={"h1"} text="Go to Faq Page" />
+          </a>
+        </Link>
       </main>
 
       <footer></footer>
