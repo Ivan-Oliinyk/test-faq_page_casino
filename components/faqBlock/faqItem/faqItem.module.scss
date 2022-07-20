@@ -1,9 +1,11 @@
+@use "styles/mixins" as m;
+
 .wrapper {
   position: relative;
   margin-top: 2.8rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--blue-color-2);
-  min-height: 14.5rem;
+  min-height: 15rem;
 
   .header-wrapper {
     display: flex;
@@ -23,26 +25,12 @@
   }
 
   p {
-    font-size: 1.6rem;
-    line-height: 1.8rem;
-    font-weight: 400;
-    // min-height: 7.5rem;
-
-    // &.hide-more {
-    // max-height: 7.5rem;
-
-    // display: -webkit-box;
-    // -webkit-line-clamp: 4;
-    // -webkit-box-orient: vertical;
-    // overflow: hidden;
-    // text-overflow: ellipsis;
-    // }
+    @include m.font(1.6rem, 400, 1.2);
   }
 
   button {
-    background-color: transparent;
-    border: none;
     cursor: pointer;
+    @include m.clear-btn;
 
     .btn-icon {
       position: absolute;

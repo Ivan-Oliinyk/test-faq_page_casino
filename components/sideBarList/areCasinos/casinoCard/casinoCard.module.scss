@@ -1,3 +1,5 @@
+@use "styles/mixins" as m;
+
 .card {
   margin-bottom: 0.2rem;
   display: flex;
@@ -9,9 +11,7 @@
 
     h3 {
       color: var(--blue-color-3);
-      font-size: 1.6rem;
-      font-weight: 700;
-      line-height: 1;
+      @include m.font($fs: 1.6rem, $fw: 700);
     }
 
     .info-wrapper {
@@ -37,16 +37,12 @@
 
     .info-descr {
       div:nth-child(1) {
-        font-size: 2.1rem;
-        font-weight: 700;
-        line-height: 1;
+        @include m.font($fs: 2.1rem, $fw: 700);
         color: var(--blue-color-3);
       }
 
       div:nth-child(2) {
-        font-size: 1rem;
-        font-weight: 600;
-        line-height: 1;
+        @include m.font($fs: 1rem, $fw: 600);
         color: var(--blue-color-1);
       }
     }

@@ -1,3 +1,5 @@
+@use "styles/mixins" as m;
+
 .card {
   display: flex;
   background-color: var(--white-color);
@@ -24,22 +26,16 @@
       color: var(--blue-color-3);
 
       span:nth-of-type(1) {
-        font-size: 1.4rem;
-        font-weight: 400;
-        line-height: 1;
+        @include m.font($fs: 1.4rem, $fw: 400);
       }
 
       span:nth-of-type(2) {
-        font-size: 2.4rem;
-        font-weight: 600;
-        line-height: 1;
+        @include m.font($fs: 2.4rem, $fw: 600);
       }
     }
 
     div:nth-of-type(2) {
-      font-size: 1.6rem;
-      line-height: 1.9rem;
-      font-weight: 600;
+      @include m.font($fs: 1.6rem, $fw: 600, $lh: 1.2);
     }
 
     .btn__icon {

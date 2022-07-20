@@ -1,17 +1,15 @@
 @use "styles/mixins" as m;
 
-// .title {
-//   @include m.font($fs: 72px, $fw: 700, $lh: 16px);
-// }
+h1.title {
+  @include m.fluid-type(m.bp("xs"), m.bp("xxxl"), 32px, 42px);
+  font-weight: 700;
+  line-height: 1.2;
+}
 
 h2.title {
-  font-size: 2.8rem;
-  font-weight: 700;
-  line-height: 1.1;
+  @include m.font($fs: 2.8rem, $fw: 700, $lh: 1.2);
 }
 
 h3.title {
-  font-size: 1.8rem;
-  font-weight: 600;
-  line-height: 1.2;
+  @include m.font($fs: 1.8rem, $fw: 600, $lh: 1.2);
 }

@@ -1,9 +1,6 @@
 import { FC } from "react";
-import s from "./search-form.module.scss";
-
-type SearchFormType = {
-  text: string;
-};
+import { SearchFormType } from "../../types/faqBlockType";
+import s from "./searchForm.module.scss";
 
 const SearchForm: FC<SearchFormType> = ({ text }) => {
   return (

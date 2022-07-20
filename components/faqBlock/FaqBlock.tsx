@@ -6,82 +6,8 @@ import s from "./faqBlock.module.scss";
 import SearchForm from "../searchForm/SearchForm";
 import { ISize } from "../../types/hooksType";
 import { useResize } from "../../hooks/useResize";
-
-type FaqBlockType = {
-  showHeader?: boolean;
-};
-
-type DataType = {
-  id: number | string;
-  title: string;
-  description: string;
-};
-
-const dataItems: DataType[] = [
-  {
-    id: 1,
-    title: "What are lorem ipsum dolor sit amet lorem ipsum?",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-  },
-  {
-    id: 2,
-    title: "What are lorem ipsum dolor sit amet lorem ipsum?",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque nulla a porta malesuada. Vivamus ultricies sed justo ac vehicula. Ut dapibus sit amet nibh ac malesuada. Nam sagittis eget risus eu commodo. Nam nec tempor magna. Vivamus porta rutrum augue et molestie. Curabitur eget ullamcorper sem, rutrum imperdiet enim. Morbi bibendum mauris non venenatis vulputate. Suspendisse condimentum quam eget orci tristique, ac aliquet nibh malesuada.",
-  },
-  {
-    id: 3,
-    title: "What are lorem ipsum dolor sit amet lorem ipsum?",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-  },
-  {
-    id: 4,
-    title: "What are lorem ipsum dolor sit amet lorem ipsum?",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque nulla a porta malesuada. Vivamus ultricies sed justo ac vehicula. Ut dapibus sit amet nibh ac malesuada. Nam sagittis eget risus eu commodo. Nam nec tempor magna. Vivamus porta rutrum augue et molestie. Curabitur eget ullamcorper sem, rutrum imperdiet enim. Morbi bibendum mauris non venenatis vulputate. Suspendisse condimentum quam eget orci tristique, ac aliquet nibh malesuada.",
-  },
-  {
-    id: 5,
-    title: "What are lorem ipsum dolor sit amet lorem ipsum?",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-  },
-  {
-    id: 6,
-    title: "What are lorem ipsum dolor sit amet lorem ipsum?",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-  },
-  {
-    id: 7,
-    title: "What are lorem ipsum dolor sit amet lorem ipsum?",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-  },
-  {
-    id: 8,
-    title: "What are lorem ipsum dolor sit amet lorem ipsum?",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque nulla a porta malesuada. Vivamus ultricies sed justo ac vehicula. Ut dapibus sit amet nibh ac malesuada. Nam sagittis eget risus eu commodo. Nam nec tempor magna. Vivamus porta rutrum augue et molestie. Curabitur eget ullamcorper sem, rutrum imperdiet enim. Morbi bibendum mauris non venenatis vulputate. Suspendisse condimentum quam eget orci tristique, ac aliquet nibh malesuada.",
-  },
-  {
-    id: 9,
-    title: "What are lorem ipsum dolor sit amet lorem ipsum?",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-  },
-  {
-    id: 10,
-    title: "What are lorem ipsum dolor sit amet lorem ipsum?",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-  },
-  {
-    id: 11,
-    title: "What are lorem ipsum dolor sit amet lorem ipsum?",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-  },
-];
+import { dataItems } from "./fakeData";
+import { DataType, FaqBlockType } from "../../types/faqBlockType";
 
 const FaqBlock: FC<FaqBlockType> = ({ showHeader = true }) => {
   const [context, setContext] = useState([]);
@@ -114,7 +40,18 @@ const FaqBlock: FC<FaqBlockType> = ({ showHeader = true }) => {
 
   return (
     <div className={s.wrapper}>
-      <div>{showHeader && <FaqHeader title={"FAQ h1"} />}</div>
+      <div>
+        {showHeader && (
+          <FaqHeader
+            title={"FAQ h1"}
+            description="Nulla eget magna ut purus iaculis dapibus. Vestibulum euismod
+          fringilla gravida. Donec a quam a elit tristique fringilla. Nam ipsum
+          enim, bibendum vitae magna et, placerat porttitor enim. Suspendisse
+          potenti. Donec ut lorem placerat, feugiat magna non, sodales risus.
+          Fusce rutrum suscipit diam, eu tempor erat sollicitudin vel."
+          />
+        )}
+      </div>
       <div className={s.content}>
         <div className={s["content-header"]}>
           <Heading text={"FAQ lorem ipsum h2"} tag={"h2"} />

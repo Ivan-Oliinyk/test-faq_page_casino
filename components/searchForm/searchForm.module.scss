@@ -1,12 +1,13 @@
+@use "styles/mixins" as m;
+
 .form {
   input {
     padding: 7px;
     border: 1px solid var(--blue-color-2);
     border-radius: 6px;
-    font-size: 1.4rem;
-    line-height: 1.7rem;
     color: var(--blue-color-2);
     transition: border 0.3s linear;
+    @include m.font($fs: 1.4rem, $fw: 400, $lh: 1.2);
 
     &::placeholder {
       color: var(--blue-color-2);

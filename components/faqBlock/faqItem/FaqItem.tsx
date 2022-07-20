@@ -1,16 +1,19 @@
 import { FC, useState } from "react";
+import {
+  FaqItemType,
+  IsLongType,
+  ToCutStringType,
+} from "../../../types/faqBlockType";
 import Heading from "../../heading/Heading";
-import s from "./faq-item.module.scss";
-
-type FaqItemType = { title: string; description: string };
+import s from "./faqItem.module.scss";
 
 const FaqItem: FC<FaqItemType> = ({ title, description }) => {
   const [showMore, setShowMore] = useState<boolean>(false);
 
-  const isLongString = (str: string = description, strLength: number = 170) =>
+  const isLongString: IsLongType = (str = description, strLength = 170) =>
     str.length > strLength;
 
-  const toCutString = (str: string, strLength: number = 170) =>
+  const toCutString: ToCutStringType = (str, strLength = 170) =>
     str.length > strLength ? str.slice(0, strLength) + "..." : str;
 
   return (
@@ -22,11 +25,8 @@ const FaqItem: FC<FaqItemType> = ({ title, description }) => {
         <Heading text={title} tag="h3" />
       </div>
 
-      {/* <p className={!showMore ? s["hide-more"] : ""}>
-        {!showMore ? toCutString(description) : description}
-      </p> */}
       <p>{!showMore ? toCutString(description) : description}</p>
-      {isLongString() && (
+      {isLongString(description) && (
         <button type="button" onClick={() => setShowMore(!showMore)}>
           {showMore ? (
             <svg className={s["btn-icon"]}>

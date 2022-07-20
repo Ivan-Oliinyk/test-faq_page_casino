@@ -1,21 +1,22 @@
+@use "styles/mixins" as m;
+
 .wrapper {
-  margin-bottom: 4.2rem;
+  margin-bottom: 4%;
 
   h1 {
-    margin-bottom: 2rem;
+    margin-bottom: 1.8%;
     color: var(--blue-color-1);
-    font-size: 4.2rem;
-    font-weight: 700;
-    line-height: 1.2;
   }
 
   .content {
     display: flex;
+    align-items: center;
 
     .img-wrapper {
       display: flex;
       justify-content: center;
       min-width: 200px;
+      max-height: 140px;
     }
 
     .descr {
@@ -23,6 +24,14 @@
       font-size: 2rem;
       font-weight: 400;
       line-height: 2.4rem;
+    }
+  }
+}
+
+@media screen and (max-width: m.bp("md")) {
+  .wrapper {
+    .content {
+      display: none;
     }
   }
 }
