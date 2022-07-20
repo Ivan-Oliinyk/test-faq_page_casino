@@ -3,15 +3,15 @@
 export const dataItems = [
   {
     id: 1,
-    title: "What are lorem ipsum dolor sit amet lorem ipsum?",
+    title: "What are lorem ipsum  dolor sit amet lorem ipsum?",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+      "What</br> are <strong>lorem</strong> ipsum <i>dolor<i> sit </br>amet lorem ipsum?",
   },
   {
     id: 2,
     title: "What are lorem ipsum dolor sit amet lorem ipsum?",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque nulla a porta malesuada. Vivamus ultricies sed justo ac vehicula. Ut dapibus sit amet nibh ac malesuada. Nam sagittis eget risus eu commodo. Nam nec tempor magna. Vivamus porta rutrum augue et molestie. Curabitur eget ullamcorper sem, rutrum imperdiet enim. Morbi bibendum mauris non venenatis vulputate. Suspendisse condimentum quam eget orci tristique, ac aliquet nibh malesuada.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. </br>Curabitur pellentesque nulla a porta malesuada. Vivamus ultricies sed justo ac vehicula. Ut dapibus sit amet nibh ac malesuada. Nam sagittis eget risus eu commodo. Nam nec tempor magna. Vivamus porta rutrum augue et molestie. Curabitur eget ullamcorper sem, rutrum imperdiet enim. Morbi bibendum mauris non venenatis vulputate. Suspendisse condimentum quam eget orci tristique, ac aliquet nibh malesuada.",
   },
   {
     id: 3,

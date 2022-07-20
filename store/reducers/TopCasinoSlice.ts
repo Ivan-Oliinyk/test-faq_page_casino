@@ -2,12 +2,6 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ITopCasino } from "../../types/ITopCasino";
 import { fetchTopCasino } from "./ActionCreator";
 
-interface UserState {
-  topCasinos: ITopCasino[];
-  isLoading: boolean;
-  error: string;
-}
-
 //delete in production!
 const topCasinos = [
   {
@@ -70,22 +64,7 @@ const initialState = {
 export const topCasinoSlice = createSlice({
   name: "topCasino",
   initialState,
-  reducers: {
-    // topCasinoFetching(state) {
-    //   state.isLoading = true;
-    //   state.error = "";
-    // },
-    // topCasinoFetchingSuccess(state, action: PayloadAction<ITopCasino[]>) {
-    //   state.isLoading = false;
-    //   state.error = "";
-    //   state.topCasinos = action.payload;
-    // },
-    // topCasinoFetchingError(state, action: PayloadAction<string>) {
-    //   state.isLoading = false;
-    //   state.error = action.payload;
-    // },
-  },
-
+  reducers: {},
   extraReducers: {
     [fetchTopCasino.fulfilled.type]: (
       state,

@@ -6,14 +6,15 @@ import Heading from "../../heading/Heading";
 import CasinoCard from "./casinoCard/CasinoCard";
 
 const AreCasinos = ({}) => {
-  //use in production !
-  // const dispatch = useAppDispatch();
-
   const { topCasinos, error, isLoading } = useAppSelector(
     (state) => state.topCasinoReducer
   );
 
-  //use in production !
+  console.log("topCasinos ===> ", topCasinos);
+
+  //use in production! Uncomment and add you endpoint in ./store/reducers/ActionCreator.ts
+  // const dispatch = useAppDispatch();
+
   // useEffect(() => {
   //   dispatch(fetchTopCasino());
   // }, []);

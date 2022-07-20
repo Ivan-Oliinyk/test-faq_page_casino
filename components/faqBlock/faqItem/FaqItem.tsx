@@ -1,9 +1,6 @@
 import { FC, useState } from "react";
-import {
-  FaqItemType,
-  IsLongType,
-  ToCutStringType,
-} from "../../../types/faqBlockType";
+import { FaqItemType, IsLongType } from "../../../types/faqBlockType";
+import { toCutString } from "../../../utils/toCutString";
 import Heading from "../../heading/Heading";
 import s from "./faqItem.module.scss";
 
@@ -12,9 +9,6 @@ const FaqItem: FC<FaqItemType> = ({ title, description }) => {
 
   const isLongString: IsLongType = (str = description, strLength = 170) =>
     str.length > strLength;
-
-  const toCutString: ToCutStringType = (str, strLength = 170) =>
-    str.length > strLength ? str.slice(0, strLength) + "..." : str;
 
   return (
     <div
@@ -29,9 +23,19 @@ const FaqItem: FC<FaqItemType> = ({ title, description }) => {
         <Heading text={title} tag="h3" />
       </div>
 
-      <p className={!showMore ? s.hide : s.show}>
+      {/* <p className={!showMore ? s.hide : s.show}>
         {!showMore ? toCutString(description) : description}
-      </p>
+      </p> */}
+      <div
+        className={
+          !showMore
+            ? `${s.description + " " + s.hide}`
+            : `${s.description + " " + s.show}`
+        }
+        dangerouslySetInnerHTML={{ __html: description }}
+      >
+        {/* {!showMore ? toCutString(description) : description} */}
+      </div>
       {isLongString(description) && (
         <button type="button" onClick={() => setShowMore(!showMore)}>
           {showMore ? (

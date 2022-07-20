@@ -8,37 +8,16 @@ import { ISize } from "../../types/hooksType";
 import { useResize } from "../../hooks/useResize";
 import { dataItems } from "./fakeData";
 import { DataType, FaqBlockType } from "../../types/faqBlockType";
+import { toChunkArray } from "../../utils/toChunkArray";
+import { generateColumnCount } from "../../utils/generateColumnCount";
 
 const FaqBlock: FC<FaqBlockType> = ({ showHeader = true }) => {
   const [context, setContext] = useState([]);
   const { width }: ISize = useResize();
 
-  const toChunkArray = (data: Array<any>, col: number) =>
-    data.reduce((acc, _, idx) => {
-      if (idx < col) {
-        col === 1
-          ? (acc = data)
-          : (acc[idx] = data.filter((_, index) => !((index - idx) % col)));
-      }
-
-      return acc;
-    }, []);
-
   useEffect(() => {
-    if (width! >= 1400) {
-      setContext(toChunkArray(dataItems, 3));
-    }
-
-    if (width! < 1400) {
-      setContext(toChunkArray(dataItems, 2));
-    }
-
-    if (width! < 992) {
-      setContext(toChunkArray(dataItems, 1));
-    }
+    setContext(toChunkArray(dataItems, generateColumnCount(width)));
   }, [width]);
-
-  console.log("width===>", width);
 
   return (
     <div className={s.wrapper}>
