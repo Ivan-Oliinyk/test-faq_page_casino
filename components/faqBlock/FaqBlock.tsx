@@ -9,7 +9,8 @@ import { useResize } from "../../hooks/useResize";
 import { DataType, FaqBlockType } from "../../types/faqBlockType";
 import { toChunkArray } from "../../utils/toChunkArray";
 import { generateColumnCount } from "../../utils/generateColumnCount";
-import { useAppSelector } from "../../hooks/redux";
+import { useAppDispatch, useAppSelector } from "../../hooks/redux";
+import { fetchFaq } from "../../store/reducers/faqReducer/FaqActionCreator";
 
 const FaqBlock: FC<FaqBlockType> = ({ showHeader = true }) => {
   const { faqBlock, isLoading, error } = useAppSelector(
@@ -19,8 +20,14 @@ const FaqBlock: FC<FaqBlockType> = ({ showHeader = true }) => {
   const [context, setContext] = useState([]);
   const { width }: ISize = useResize();
 
+  //use with your data! Uncomment and add you endpoint in ./store/reducers/faqReducer/FaqActionCreator
+  // const dispatch = useAppDispatch();
+
   useEffect(() => {
     setContext(toChunkArray(faqBlock, generateColumnCount(width)));
+
+    //use in with your data! Uncomment and add you endpoint in ./store/reducers/faqReducer/FaqActionCreator
+    // dispatch(fetchFaq());
   }, [width]);
 
   return (

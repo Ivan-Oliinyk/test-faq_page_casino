@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next";
 import React, { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
-import { fetchTopCasino } from "../../../store/reducers/TopCasion/ActionCreator";
+import { fetchTopCasino } from "../../../store/reducers/topCasionReducer/ActionCreator";
 import Heading from "../../heading/Heading";
 import CasinoCard from "./casinoCard/CasinoCard";
 
@@ -10,7 +10,7 @@ const AreCasinos = ({}) => {
     (state) => state.topCasinoReducer
   );
 
-  //use in production! Uncomment and add you endpoint in ./store/reducers/ActionCreator.ts
+  //use with your data! Uncomment and add you endpoint in ./store/reducers/topCasino/ActionCreator.ts
   // const dispatch = useAppDispatch();
 
   // useEffect(() => {

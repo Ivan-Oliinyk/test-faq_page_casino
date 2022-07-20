@@ -1,8 +1,13 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
-import topCasinoReducer from "./reducers/TopCasion/TopCasinoSlice";
+import topCasinoReducer from "./reducers/topCasionReducer/TopCasinoSlice";
 import faqBlockReducer from "./reducers/faqReducer/FaqSlice";
+import topBonusesReducer from "./reducers/topBonuseReducer/TopBonusesSlice";
 
-const rootReducer = combineReducers({ topCasinoReducer, faqBlockReducer });
+const rootReducer = combineReducers({
+  topCasinoReducer,
+  faqBlockReducer,
+  topBonusesReducer,
+});
 
 export const setupStore = () => {
   return configureStore({

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React, { FC } from "react";
 import s from "./bonusCard.module.scss";
-import { BonusCardProps } from "../../../../types/topBonusesType";
+import { BonusCardProps } from "../../../../types/IBonusCardType";
 
 const BonusCard: FC<BonusCardProps> = ({ data }) => {
   return (

@@ -1,73 +1,26 @@
-import React from "react";
-import { BonusCardType } from "../../../types/topBonusesType";
+import React, { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
 import Heading from "../../heading/Heading";
 import BonusCard from "./bonusCard/BonusCard";
-
-const mockData: BonusCardType[] = [
-  {
-    id: 1,
-    imageSrc: "/images/top-casino/ozwin.png",
-    freeSpins: 100,
-    percentUp: "400%",
-    bonus: 4000,
-    isExclusive: true,
-  },
-  {
-    id: 2,
-    imageSrc: "/images/top-casino/fairGo.png",
-    freeSpins: 100,
-    percentUp: "400%",
-    bonus: 4000,
-    isExclusive: true,
-  },
-  {
-    id: 3,
-    imageSrc: "/images/top-casino/hellspin.png",
-    freeSpins: 100,
-    percentUp: "400%",
-    bonus: 4000,
-    isExclusive: false,
-  },
-  {
-    id: 4,
-    imageSrc: "/images/top-casino/uptown.png",
-    freeSpins: 100,
-    percentUp: "400%",
-    bonus: 4000,
-    isExclusive: true,
-  },
-  {
-    id: 5,
-    imageSrc: "/images/top-casino/ignition.png",
-    freeSpins: 100,
-    percentUp: "400%",
-    bonus: 4000,
-    isExclusive: false,
-  },
-  {
-    id: 6,
-    imageSrc: "/images/top-casino/lucky.png",
-    freeSpins: 100,
-    percentUp: "400%",
-    bonus: 4000,
-    isExclusive: false,
-  },
-  {
-    id: 7,
-    imageSrc: "/images/top-casino/bizzo.png",
-    freeSpins: 100,
-    percentUp: "400%",
-    bonus: 4000,
-    isExclusive: true,
-  },
-];
+import { fetchTopBonuses } from "../../../store/reducers/topBonuseReducer/TopBonusesActionCreator";
 
 const AreBonuses = () => {
+  const { topBonuses, error, isLoading } = useAppSelector(
+    (state) => state.topBonusesReducer
+  );
+
+  //use with your data! Uncomment and add you endpoint in ./store/reducers/topBonuseReducer/TopBonusesActionCreator.ts
+  // const dispatch = useAppDispatch();
+
+  // useEffect(() => {
+  //   dispatch(fetchTopBonuses());
+  // }, []);
+
   return (
     <div>
       <Heading tag="h2" text={"Top Bonuses"} />
       <div>
-        {mockData.map((item) => (
+        {topBonuses.map((item) => (
           <BonusCard key={item.id} data={item} />
         ))}
       </div>
