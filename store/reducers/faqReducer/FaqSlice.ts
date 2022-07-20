@@ -1,6 +1,8 @@
-//delete in production
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { IFaqDataType } from "../../../types/IFaqDataType";
+import { fetchFaq } from "./FaqActionCreator";
 
-export const dataItems = [
+export const fakeDataFaq: IFaqDataType[] = [
   {
     id: 1,
     title: "What are lorem ipsum  dolor sit amet lorem ipsum?",
@@ -65,3 +67,36 @@ export const dataItems = [
     description: "11Lorem ipsum dolor sit amet, consectetur adipiscing elit",
   },
 ];
+
+const initialState = {
+  faqBlock: fakeDataFaq,
+  isLoading: false,
+  error: "",
+};
+
+export const faqDataSlice = createSlice({
+  name: "faqBlock",
+  initialState,
+  reducers: {},
+  extraReducers: {
+    [fetchFaq.fulfilled.type]: (
+      state,
+      action: PayloadAction<IFaqDataType[]>
+    ) => {
+      state.isLoading = false;
+      state.error = "";
+      state.faqBlock = action.payload;
+    },
+
+    [fetchFaq.pending.type]: (state) => {
+      state.isLoading = true;
+    },
+
+    [fetchFaq.rejected.type]: (state, action: PayloadAction<string>) => {
+      state.isLoading = false;
+      state.error = action.payload;
+    },
+  },
+});
+
+export default faqDataSlice.reducer;

@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next";
 import React, { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
-import { fetchTopCasino } from "../../../store/reducers/ActionCreator";
+import { fetchTopCasino } from "../../../store/reducers/TopCasion/ActionCreator";
 import Heading from "../../heading/Heading";
 import CasinoCard from "./casinoCard/CasinoCard";
 
@@ -9,8 +9,6 @@ const AreCasinos = ({}) => {
   const { topCasinos, error, isLoading } = useAppSelector(
     (state) => state.topCasinoReducer
   );
-
-  console.log("topCasinos ===> ", topCasinos);
 
   //use in production! Uncomment and add you endpoint in ./store/reducers/ActionCreator.ts
   // const dispatch = useAppDispatch();
@@ -23,8 +21,8 @@ const AreCasinos = ({}) => {
     <div>
       <Heading tag="h2" text={"Top Casinos"} />
       <div>
-        {isLoading && <p>Loading ...</p>}
-        {error && <p>Error !</p>}
+        {isLoading && <p>Loading data...</p>}
+        {error && <p>Error with loading data!</p>}
         {topCasinos.length &&
           topCasinos.map((item) => <CasinoCard key={item.id} data={item} />)}
       </div>

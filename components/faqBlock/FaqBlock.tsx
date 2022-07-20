@@ -6,17 +6,21 @@ import s from "./faqBlock.module.scss";
 import SearchForm from "../searchForm/SearchForm";
 import { ISize } from "../../types/hooksType";
 import { useResize } from "../../hooks/useResize";
-import { dataItems } from "./fakeData";
 import { DataType, FaqBlockType } from "../../types/faqBlockType";
 import { toChunkArray } from "../../utils/toChunkArray";
 import { generateColumnCount } from "../../utils/generateColumnCount";
+import { useAppSelector } from "../../hooks/redux";
 
 const FaqBlock: FC<FaqBlockType> = ({ showHeader = true }) => {
+  const { faqBlock, isLoading, error } = useAppSelector(
+    (state) => state.faqBlockReducer
+  );
+
   const [context, setContext] = useState([]);
   const { width }: ISize = useResize();
 
   useEffect(() => {
-    setContext(toChunkArray(dataItems, generateColumnCount(width)));
+    setContext(toChunkArray(faqBlock, generateColumnCount(width)));
   }, [width]);
 
   return (

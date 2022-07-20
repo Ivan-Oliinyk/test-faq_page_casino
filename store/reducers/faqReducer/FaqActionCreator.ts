@@ -1,16 +1,14 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { ITopCasino } from "../../types/ITopCasino";
-import { AppDispatch } from "../store";
-import { topCasinoSlice } from "./TopCasinoSlice";
+import { DataType } from "../../../types/faqBlockType";
 
-export const fetchTopCasino = createAsyncThunk(
-  "topCasino/fetchAll",
+export const fetchFaq = createAsyncThunk(
+  "faqBlock/fetchAll",
   async (_, thunkAPI) => {
     try {
       const UrlEndpoint = ""; //write you endpoint in UrlEndpoint  for example(https://jsonplaceholder.typicode.com/users)
 
-      const response = await axios.get<ITopCasino[]>(UrlEndpoint);
+      const response = await axios.get<DataType[]>(UrlEndpoint);
       return response.data;
     } catch (err) {
       return thunkAPI.rejectWithValue("Failed to load data");

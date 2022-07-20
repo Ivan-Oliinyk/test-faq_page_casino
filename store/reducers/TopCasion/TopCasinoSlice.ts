@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { ITopCasino } from "../../types/ITopCasino";
+import { ITopCasino } from "../../../types/ITopCasino";
 import { fetchTopCasino } from "./ActionCreator";
 
 //delete in production!
