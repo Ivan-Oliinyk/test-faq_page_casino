@@ -17,7 +17,11 @@ const FaqItem: FC<FaqItemType> = ({ title, description }) => {
     str.length > strLength ? str.slice(0, strLength) + "..." : str;
 
   return (
-    <div className={s.wrapper}>
+    <div
+      className={
+        showMore ? `${s.wrapper + " " + s["show-content"]}` : s.wrapper
+      }
+    >
       <div className={s["header-wrapper"]}>
         <svg className={s["header-icon"]}>
           <use href="/sprite.svg#icon-Frame"></use>
@@ -25,7 +29,9 @@ const FaqItem: FC<FaqItemType> = ({ title, description }) => {
         <Heading text={title} tag="h3" />
       </div>
 
-      <p>{!showMore ? toCutString(description) : description}</p>
+      <p className={!showMore ? s.hide : s.show}>
+        {!showMore ? toCutString(description) : description}
+      </p>
       {isLongString(description) && (
         <button type="button" onClick={() => setShowMore(!showMore)}>
           {showMore ? (

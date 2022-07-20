@@ -1,6 +1,8 @@
+@use "styles/mixins" as m;
+
 .wrapper {
-  margin-left: 3.8rem;
-  width: var(--small-column-dekstop-width);
+  margin-left: 2.2%;
+  min-width: var(--small-column-dekstop-width);
 
   h2 {
     margin-bottom: 1rem;
@@ -9,5 +11,12 @@
 
   & > div:not(:last-of-type) {
     margin-bottom: 2.5rem;
+  }
+}
+
+@media screen and (max-width: m.bp("sm")) {
+  .wrapper {
+    padding: 2rem 0;
+    margin: 0;
   }
 }

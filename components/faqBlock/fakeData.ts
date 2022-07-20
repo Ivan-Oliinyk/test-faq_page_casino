@@ -17,7 +17,7 @@ export const dataItems = [
     id: 3,
     title: "What are lorem ipsum dolor sit amet lorem ipsum?",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
   },
   {
     id: 4,
@@ -52,16 +52,16 @@ export const dataItems = [
   {
     id: 9,
     title: "What are lorem ipsum dolor sit amet lorem ipsum?",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    description: "33Lorem ipsum dolor sit amet, consectetur adipiscing elit",
   },
   {
     id: 10,
     title: "What are lorem ipsum dolor sit amet lorem ipsum?",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    description: "22Lorem ipsum dolor sit amet, consectetur adipiscing elit",
   },
   {
     id: 11,
     title: "What are lorem ipsum dolor sit amet lorem ipsum?",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    description: "11Lorem ipsum dolor sit amet, consectetur adipiscing elit",
   },
 ];

@@ -17,7 +17,7 @@ const FaqBlock: FC<FaqBlockType> = ({ showHeader = true }) => {
     data.reduce((acc, _, idx) => {
       if (idx < col) {
         col === 1
-          ? (acc = data.filter((_, index) => !((index - idx) % col)))
+          ? (acc = data)
           : (acc[idx] = data.filter((_, index) => !((index - idx) % col)));
       }
 
@@ -33,10 +33,12 @@ const FaqBlock: FC<FaqBlockType> = ({ showHeader = true }) => {
       setContext(toChunkArray(dataItems, 2));
     }
 
-    if (width! < 768) {
+    if (width! < 992) {
       setContext(toChunkArray(dataItems, 1));
     }
   }, [width]);
+
+  console.log("width===>", width);
 
   return (
     <div className={s.wrapper}>
@@ -57,10 +59,10 @@ const FaqBlock: FC<FaqBlockType> = ({ showHeader = true }) => {
           <Heading text={"FAQ lorem ipsum h2"} tag={"h2"} />
           <SearchForm text={"Search in FAQ..."} />
         </div>
-        <div className={s["content-body"]}>
+        <div className={s["content-wrapper"]}>
           {context && context.length > 3 ? (
             <div className={s["content-body"]}>
-              {context.map((item: any) => (
+              {context.map((item: DataType) => (
                 <FaqItem
                   key={item.id}
                   title={item.title}
