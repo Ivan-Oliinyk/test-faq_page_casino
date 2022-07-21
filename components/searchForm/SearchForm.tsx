@@ -15,7 +15,7 @@ const SearchForm: FC<SearchFormType> = ({ text, handleOnChange }) => {
         type="text"
         placeholder={text}
         name="search"
-      ></input>
+      />
     </form>
   );
 };

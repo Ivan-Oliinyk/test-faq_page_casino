@@ -12,14 +12,16 @@ interface ISideBarListProps {
 
 const SideBarList: FC<ISideBarListProps> = ({ variants }) => {
   const variantsMap = {
-    areCasinos: <AreCasinos key={"areCasinos"} />,
-    areBonuses: <AreBonuses key={"areBonuses"} />,
-    areSlotGames: <AreGames key={"areSlotGames"} />,
+    areCasinos: (suffix: number) => <AreCasinos key={"areCasinos-" + suffix} />,
+    areBonuses: (suffix: number) => <AreBonuses key={"areBonuses-" + suffix} />,
+    areSlotGames: (suffix: number) => (
+      <AreGames key={"areSlotGames-" + suffix} />
+    ),
   };
 
   return (
     <div className={s.wrapper}>
-      {variants.map((variant) => variantsMap[variant])}
+      {variants.map((variant, idx) => variantsMap[variant](idx))}
     </div>
   );
 };

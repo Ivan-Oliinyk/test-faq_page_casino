@@ -47,18 +47,19 @@ const FaqBlock: FC<FaqBlockType> = ({ showHeader = true }) => {
     setSearch(e.target.value);
   };
 
+  const headerDescription = `Nulla eget magna ut purus iaculis dapibus. Vestibulum euismod
+          fringilla gravida. Donec a quam a elit tristique fringilla. Nam ipsum
+          enim, bibendum vitae magna et, placerat porttitor enim. Suspendisse
+          potenti. Donec ut lorem placerat, feugiat magna non, sodales risus.
+          Fusce rutrum suscipit diam, eu tempor erat sollicitudin vel.`;
+
+  const headerTitle = `FAQ h1`;
+
   return (
     <div className={s.wrapper}>
       <div>
         {showHeader && (
-          <FaqHeader
-            title={"FAQ h1"}
-            description="Nulla eget magna ut purus iaculis dapibus. Vestibulum euismod
-          fringilla gravida. Donec a quam a elit tristique fringilla. Nam ipsum
-          enim, bibendum vitae magna et, placerat porttitor enim. Suspendisse
-          potenti. Donec ut lorem placerat, feugiat magna non, sodales risus.
-          Fusce rutrum suscipit diam, eu tempor erat sollicitudin vel."
-          />
+          <FaqHeader title={headerTitle} description={headerDescription} />
         )}
       </div>
       <div className={s.content}>
