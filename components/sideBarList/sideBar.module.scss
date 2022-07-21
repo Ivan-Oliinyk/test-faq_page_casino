@@ -1,20 +1,12 @@
 @use "styles/mixins" as m;
 
-// @mixin margin-offset($value) {
-//   $dir: var(--math);
-
-//   @if $dir == 1 {
-//     margin-right: $value;
-//   } @else {
-//     margin-left: $value;
-//   }
-// }
+$dir-index: calc(var(--math) * 1);
 
 .wrapper {
-  margin-left: 2.2%;
-  // @include margin-offset(2.2%);
-
-  min-width: var(--small-column-dekstop-width);
+  // margin-left: 20px;
+  margin: 0 1rem;
+  transform: translateX(calc(var(--math) * 20px));
+  min-width: var(--small-column-desktop-width);
 
   h2 {
     margin-bottom: 1rem;
@@ -30,5 +22,6 @@
   .wrapper {
     padding: 2rem 0;
     margin: 0;
+    transform: none;
   }
 }

@@ -27,8 +27,6 @@ const FaqBlock: FC<FaqBlockType> = ({ showHeader = true }) => {
   const [data, setData] = useState([]);
   const { width }: ISize = useResize();
 
-  console.log(data);
-
   //use with your data! Uncomment and add you endpoint in ./store/reducers/faqReducer/FaqActionCreator
   // const dispatch = useAppDispatch();
 

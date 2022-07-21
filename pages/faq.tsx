@@ -19,7 +19,7 @@ const Faq: FC<FaqTypes> = ({ title }) => {
         <div className={s.container}>
           <FaqBlock />
           <SideBarList
-            variants={["areBonuses", "areCasinos", "areSlotGames"]}
+            variants={["areCasinos", "areBonuses", "areSlotGames"]}
           />
         </div>
       </main>

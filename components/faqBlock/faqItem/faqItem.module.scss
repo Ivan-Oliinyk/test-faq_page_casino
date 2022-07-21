@@ -36,7 +36,9 @@
 
   .header-icon {
     display: block;
-    margin-right: 8px;
+    // margin-right: 8px;
+    margin: 0 0.4rem;
+    transform: translateX(calc(var(--math) * -0.4rem));
     width: 28px;
     min-width: 28px;
     height: 28px;

@@ -9,7 +9,7 @@ export const generateColumnCount = (width: number = 0): number => {
     column = 2;
   }
 
-  if (width! < 992) {
+  if (width! <= 992) {
     column = 1;
   }
 

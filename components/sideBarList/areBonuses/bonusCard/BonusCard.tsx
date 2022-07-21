@@ -14,7 +14,7 @@ const BonusCard: FC<BonusCardProps> = ({ data }) => {
               src="/images/Exclusive.png"
               alt="exclusive"
               width={80}
-              height={60}
+              height={25}
             />
           </span>
         )}

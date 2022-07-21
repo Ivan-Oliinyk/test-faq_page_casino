@@ -14,7 +14,10 @@
       align-items: baseline;
 
       h3 {
-        margin-right: 0.4rem;
+        // margin-right: 0.4rem;
+        margin: 0 0.2rem;
+        transform: translateX(calc(var(--math) * -0.2rem));
+
         color: var(--blue-color-3);
         @include m.font(1.5rem, 700);
       }

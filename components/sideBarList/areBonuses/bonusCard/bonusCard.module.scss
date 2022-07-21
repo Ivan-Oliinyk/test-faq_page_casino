@@ -18,8 +18,10 @@
 
     .exclusive {
       position: absolute;
-      left: -1.4rem;
-      top: 0;
+      top: 1rem;
+      left: calc(50% - 4rem);
+      transform: translateX(calc(-8.3rem * var(--math)))
+        rotate(calc(var(--math) * -45deg));
     }
 
     div {
@@ -40,11 +42,11 @@
 
     .btn__icon {
       position: absolute;
-      right: 1.2rem;
+      left: 50%;
       top: 50%;
       width: 0.4rem;
       height: 2rem;
-      transform: translateY(-50%);
+      transform: translate(calc(9.5rem * var(--math)), -50%);
       cursor: pointer;
     }
   }

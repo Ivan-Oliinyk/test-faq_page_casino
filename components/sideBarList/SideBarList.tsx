@@ -12,9 +12,9 @@ interface ISideBarListProps {
 
 const SideBarList: FC<ISideBarListProps> = ({ variants }) => {
   const variantsMap = {
-    areCasinos: <AreCasinos />,
-    areBonuses: <AreBonuses />,
-    areSlotGames: <AreGames />,
+    areCasinos: <AreCasinos key={"areCasinos"} />,
+    areBonuses: <AreBonuses key={"areBonuses"} />,
+    areSlotGames: <AreGames key={"areSlotGames"} />,
   };
 
   return (
