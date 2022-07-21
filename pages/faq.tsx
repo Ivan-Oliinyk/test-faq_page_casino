@@ -18,7 +18,9 @@ const Faq: FC<FaqTypes> = ({ title }) => {
       <main>
         <div className={s.container}>
           <FaqBlock />
-          <SideBarList />
+          <SideBarList
+            variants={["areBonuses", "areCasinos", "areSlotGames"]}
+          />
         </div>
       </main>
     </Fragment>

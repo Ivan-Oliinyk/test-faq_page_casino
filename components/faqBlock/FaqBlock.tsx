@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useState, useTransition } from "react";
 import FaqHeader from "./faqHeader/FaqHeader";
 import FaqItem from "./faqItem/FaqItem";
 import Heading from "../heading/Heading";
@@ -10,7 +10,6 @@ import {
   DataType,
   FaqBlockType,
   HandleOnChangeType,
-  SearchFormType,
 } from "../../types/faqBlockType";
 import { toChunkArray } from "../../utils/toChunkArray";
 import { generateColumnCount } from "../../utils/generateColumnCount";
@@ -19,29 +18,34 @@ import { fetchFaq } from "../../store/reducers/faqReducer/FaqActionCreator";
 import { filterBySearch } from "../../utils/filterBySearch";
 
 const FaqBlock: FC<FaqBlockType> = ({ showHeader = true }) => {
-  const { faqBlock, isLoading, error } = useAppSelector(
+  const { faqBlocks, isLoading, error } = useAppSelector(
     (state) => state.faqBlockReducer
   );
 
+  const [isPending, startTransition] = useTransition();
   const [search, setSearch] = useState("");
-  const [data, setContext] = useState([]);
+  const [data, setData] = useState([]);
   const { width }: ISize = useResize();
+
+  console.log(data);
 
   //use with your data! Uncomment and add you endpoint in ./store/reducers/faqReducer/FaqActionCreator
   // const dispatch = useAppDispatch();
 
   useEffect(() => {
-    setContext(
-      toChunkArray(filterBySearch(faqBlock, search), generateColumnCount(width))
+    setData(
+      toChunkArray(
+        filterBySearch(faqBlocks, search),
+        generateColumnCount(Number(width))
+      )
     );
 
     //use in with your data! Uncomment and add you endpoint in ./store/reducers/faqReducer/FaqActionCreator
     // dispatch(fetchFaq());
-  }, [width, search]);
+  }, [width, search, faqBlocks]);
 
   const handleOnChange: HandleOnChangeType = (e) => {
-    e.preventDefault();
-
+    startTransition(() => setSearch(e.target.value));
     setSearch(e.target.value);
   };
 
@@ -68,6 +72,7 @@ const FaqBlock: FC<FaqBlockType> = ({ showHeader = true }) => {
           />
         </div>
         <div className={s["content-wrapper"]}>
+          {isPending && <p>Rendering ...!</p>}
           {data && data.length > 3 ? (
             <div className={s["content-body"]}>
               {data.map((item: DataType) => (

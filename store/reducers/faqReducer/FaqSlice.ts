@@ -68,7 +68,7 @@ export const fakeDataFaq: IFaqDataType[] = [
 ];
 
 const initialState = {
-  faqBlock: fakeDataFaq,
+  faqBlocks: fakeDataFaq,
   isLoading: false,
   error: "",
 };

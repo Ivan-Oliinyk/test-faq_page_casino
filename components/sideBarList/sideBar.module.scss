@@ -1,7 +1,19 @@
 @use "styles/mixins" as m;
 
+// @mixin margin-offset($value) {
+//   $dir: var(--math);
+
+//   @if $dir == 1 {
+//     margin-right: $value;
+//   } @else {
+//     margin-left: $value;
+//   }
+// }
+
 .wrapper {
   margin-left: 2.2%;
+  // @include margin-offset(2.2%);
+
   min-width: var(--small-column-dekstop-width);
 
   h2 {

@@ -1,9 +1,11 @@
-import { DataType } from "../types/faqBlockType";
+type FilterBySearchType = <T extends { title: string; description: string }>(
+  arr: T[],
+  search: string
+) => T[];
 
-type FilterBySearchType = (arr: DataType[], search: string) => DataType[];
-
-export const filterBySearch: FilterBySearchType = (arr, search) =>
-  arr.filter(
+export const filterBySearch: FilterBySearchType = (arr, search) => {
+  return arr.filter(
     (item) =>
       item.title && item.title!.concat(item!.description).includes(search)
   );
+};

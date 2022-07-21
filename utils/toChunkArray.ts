@@ -1,5 +1,5 @@
-export const toChunkArray = (data: Array<any>, col: number) =>
-  data.reduce((acc, _, idx) => {
+export const toChunkArray = <T>(data: Array<T>, col: number) =>
+  data.reduce<T[] | any>((acc, _, idx) => {
     if (idx < col) {
       col === 1
         ? (acc = data)
