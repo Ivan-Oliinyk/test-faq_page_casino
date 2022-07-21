@@ -14,7 +14,6 @@
       align-items: baseline;
 
       h3 {
-        // margin-right: 0.4rem;
         margin: 0 0.2rem;
         transform: translateX(calc(var(--math) * -0.2rem));
 
@@ -53,6 +52,7 @@
       div:nth-child(1) {
         @include m.font(2.1rem, 700);
         color: var(--blue-color-3);
+        margin: 0 0.2rem;
       }
 
       div:nth-child(2) {

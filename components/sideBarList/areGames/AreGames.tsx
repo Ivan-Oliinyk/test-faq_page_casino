@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
-import Heading from "../../heading/Heading";
-// import CasinoCard from "./casinoCard/CasinoCard";
-import { fetchTopGames } from "../../../store/reducers/topGamesReducer/TopGamesActionCreator";
+import { useAppDispatch, useAppSelector } from "@/hooks/redux";
+import Heading from "@/components/heading/Heading";
+import { fetchTopGames } from "@/reducers/topGamesReducer/TopGamesActionCreator";
 import GameCard from "./gameCard/GameCard";
 
 const AreGames = ({}) => {

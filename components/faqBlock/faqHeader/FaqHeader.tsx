@@ -1,8 +1,8 @@
 import Image from "next/image";
-import Heading from "../../heading/Heading";
+import Heading from "@/components/heading/Heading";
 import s from "./faqHeader.module.scss";
 import { FC } from "react";
-import { FaqHeaderType } from "../../../types/faqBlockType";
+import { FaqHeaderType } from "@/types/faqBlockType";
 
 const FaqHeader: FC<FaqHeaderType> = ({ title, description }) => {
   return (

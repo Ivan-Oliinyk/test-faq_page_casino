@@ -1,5 +1,5 @@
+import { SearchFormType } from "@/types/faqBlockType";
 import { FC } from "react";
-import { SearchFormType } from "../../types/faqBlockType";
 import s from "./searchForm.module.scss";
 
 const SearchForm: FC<SearchFormType> = ({ text, handleOnChange }) => {

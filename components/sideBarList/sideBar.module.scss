@@ -3,7 +3,6 @@
 $dir-index: calc(var(--math) * 1);
 
 .wrapper {
-  // margin-left: 20px;
   margin: 0 1rem;
   transform: translateX(calc(var(--math) * 20px));
   min-width: var(--small-column-desktop-width);

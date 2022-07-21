@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { IBonusCardType } from "../../../types/IBonusCardType";
+import { IBonusCardType } from "@/types/IBonusCardType";
 
 export const fetchTopBonuses = createAsyncThunk(
   "topBonuses/fetchAll",

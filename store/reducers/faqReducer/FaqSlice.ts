@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IFaqDataType } from "../../../types/IFaqDataType";
+import { IFaqDataType } from "@/types/IFaqDataType";
 import { fetchFaq } from "./FaqActionCreator";
 
 export const fakeDataFaq: IFaqDataType[] = [
@@ -84,7 +84,7 @@ export const faqDataSlice = createSlice({
     ) => {
       state.isLoading = false;
       state.error = "";
-      state.faqBlock = action.payload;
+      state.faqBlocks = action.payload;
     },
 
     [fetchFaq.pending.type]: (state) => {

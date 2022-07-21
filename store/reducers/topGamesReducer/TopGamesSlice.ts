@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { fetchTopGames } from "./TopGamesActionCreator";
-import { ITopGamesType } from "../../../types/ITopGamesType";
+import { ITopGamesType } from "@/types/ITopGamesType";
 
 //delete in production!
 const topGames: ITopGamesType[] = [

@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { HeadingType } from "../../types/headingType";
+import { HeadingType } from "@/types/headingType";
 import s from "./heading.module.scss";
 
 const Heading: FC<HeadingType> = ({ text, tag }) => {

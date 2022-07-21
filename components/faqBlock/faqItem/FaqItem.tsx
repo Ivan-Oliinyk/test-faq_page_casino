@@ -1,6 +1,5 @@
 import { FC, useState } from "react";
-import { FaqItemType, IsLongType } from "../../../types/faqBlockType";
-import { toCutString } from "../../../utils/toCutString";
+import { FaqItemType, IsLongType } from "@/types/faqBlockType";
 import Heading from "../../heading/Heading";
 import s from "./faqItem.module.scss";
 
@@ -23,9 +22,6 @@ const FaqItem: FC<FaqItemType> = ({ title, description }) => {
         <Heading text={title} tag="h3" />
       </div>
 
-      {/* <p className={!showMore ? s.hide : s.show}>
-        {!showMore ? toCutString(description) : description}
-      </p> */}
       <div
         className={
           !showMore
@@ -33,9 +29,7 @@ const FaqItem: FC<FaqItemType> = ({ title, description }) => {
             : `${s.description + " " + s.show}`
         }
         dangerouslySetInnerHTML={{ __html: description }}
-      >
-        {/* {!showMore ? toCutString(description) : description} */}
-      </div>
+      ></div>
       {isLongString(description) && (
         <button type="button" onClick={() => setShowMore(!showMore)}>
           {showMore ? (

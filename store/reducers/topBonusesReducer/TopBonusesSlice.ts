@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IBonusCardType } from "../../../types/IBonusCardType";
+import { IBonusCardType } from "@/types/IBonusCardType";
 import { fetchTopBonuses } from "./TopBonusesActionCreator";
 
 //delete in production!

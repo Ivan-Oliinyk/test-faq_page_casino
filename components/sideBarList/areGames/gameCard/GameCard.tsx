@@ -1,9 +1,8 @@
 import React, { FC } from "react";
-import { ITopCasino } from "../../../../types/ITopCasino";
 import s from "./gameCard.module.scss";
 import Image from "next/image";
-import Heading from "../../../heading/Heading";
-import { ITopGamesType } from "../../../../types/ITopGamesType";
+import Heading from "@/components/heading/Heading";
+import { ITopGamesType } from "@/types/ITopGamesType";
 
 const GameCard: FC<{ data: ITopGamesType }> = ({ data }) => {
   return (

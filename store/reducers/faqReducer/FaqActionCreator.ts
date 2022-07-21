@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { DataType } from "../../../types/faqBlockType";
+import { DataType } from "@/types/faqBlockType";
 
 export const fetchFaq = createAsyncThunk(
   "faqBlock/fetchAll",

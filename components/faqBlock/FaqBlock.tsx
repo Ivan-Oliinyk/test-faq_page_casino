@@ -4,18 +4,18 @@ import FaqItem from "./faqItem/FaqItem";
 import Heading from "../heading/Heading";
 import s from "./faqBlock.module.scss";
 import SearchForm from "../searchForm/SearchForm";
-import { ISize } from "../../types/hooksType";
-import { useResize } from "../../hooks/useResize";
+import { ISize } from "@/types/hooksType";
+import { useResize } from "@/hooks/useResize";
 import {
   DataType,
   FaqBlockType,
   HandleOnChangeType,
 } from "../../types/faqBlockType";
-import { toChunkArray } from "../../utils/toChunkArray";
-import { generateColumnCount } from "../../utils/generateColumnCount";
-import { useAppDispatch, useAppSelector } from "../../hooks/redux";
-import { fetchFaq } from "../../store/reducers/faqReducer/FaqActionCreator";
-import { filterBySearch } from "../../utils/filterBySearch";
+import { toChunkArray } from "@/utils/toChunkArray";
+import { generateColumnCount } from "@/utils/generateColumnCount";
+import { useAppDispatch, useAppSelector } from "@/hooks/redux";
+import { fetchFaq } from "@/reducers/faqReducer/FaqActionCreator";
+import { filterBySearch } from "@/utils/filterBySearch";
 
 const FaqBlock: FC<FaqBlockType> = ({ showHeader = true }) => {
   const { faqBlocks, isLoading, error } = useAppSelector(

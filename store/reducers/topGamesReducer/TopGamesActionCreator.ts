@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { ITopGamesType } from "../../../types/ITopGamesType";
+import { ITopGamesType } from "@/types/ITopGamesType";
 
 export const fetchTopGames = createAsyncThunk(
   "topGames/fetchAll",
