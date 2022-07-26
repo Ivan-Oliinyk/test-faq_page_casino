@@ -62,6 +62,7 @@ const FaqBlock: FC<FaqBlockType> = ({ showHeader = true }) => {
           <FaqHeader title={headerTitle} description={headerDescription} />
         )}
       </div>
+
       <div className={s.content}>
         <div className={s["content-header"]}>
           <Heading text={"FAQ lorem ipsum h2"} tag={"h2"} />
@@ -91,6 +92,7 @@ const FaqBlock: FC<FaqBlockType> = ({ showHeader = true }) => {
                       key={el.id}
                       title={el.title}
                       description={el.description}
+                      id={el.id}
                     />
                   ))}
                 </div>

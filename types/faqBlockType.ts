@@ -1,4 +1,8 @@
-export type FaqItemType = { title: string; description: string };
+export type FaqItemType = {
+  id?: number | string;
+  title: string;
+  description: string;
+};
 export type IsLongType = (str?: string, strLength?: number) => boolean;
 
 export type DataType = {

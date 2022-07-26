@@ -1,12 +1,27 @@
 @use "styles/mixins" as m;
 
+.header,
+.footer {
+  min-block-size: 5rem;
+  background-color: var(--grey-color-1);
+}
+
+.main {
+  background-color: var(--gray-light);
+}
+
 .container {
   padding: 0 2rem;
   display: flex;
   justify-content: center;
-  background-color: var(--gray-light);
-  min-height: 100vh;
-  width: 100%;
+  inline-size: 100%;
+}
+
+@media screen and (min-width: m.bp("xxxl")) {
+  .container {
+    max-inline-size: 144rem;
+    margin: 0 auto;
+  }
 }
 
 @media screen and (max-width: m.bp("md")) {
@@ -17,7 +32,7 @@
 }
 
 @media screen and (max-width: m.bp("xs")) {
-  .container {
+  .main {
     padding: 0;
   }
 }

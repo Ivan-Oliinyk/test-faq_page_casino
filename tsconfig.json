@@ -21,7 +21,8 @@
       "@/utils/*": ["utils/*"],
       "@/types/*": ["types/*"],
       "@/components/*": ["components/*"],
-      "@/hooks/*": ["hooks/*"]
+      "@/hooks/*": ["hooks/*"],
+      "@/bootstrap/*": ["node_modules/bootstrap/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

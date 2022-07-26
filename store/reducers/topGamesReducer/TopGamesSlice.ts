@@ -9,7 +9,7 @@ const topGames: ITopGamesType[] = [
     imageSrc: "/images/top-games/hive.png",
     title: "The Hive",
     rating: 9.8,
-    rtp: 95,
+    payout: "95",
     author: "by RTG",
   },
   {
@@ -17,7 +17,7 @@ const topGames: ITopGamesType[] = [
     imageSrc: "/images/top-games/twister.png",
     title: "Twister Wilds",
     rating: 9.8,
-    rtp: 95,
+    payout: "95",
     author: "by RTG",
   },
   {
@@ -25,7 +25,7 @@ const topGames: ITopGamesType[] = [
     imageSrc: "/images/top-games/wolwes.png",
     title: "Howling Wolves",
     rating: 9.8,
-    rtp: 95,
+    payout: "95",
     author: "by RTG",
   },
   {
@@ -33,7 +33,7 @@ const topGames: ITopGamesType[] = [
     imageSrc: "/images/top-games/rice-of-egioit.png",
     title: "Rise of Egypt Deluxe",
     rating: 9.8,
-    rtp: 95,
+    payout: "95",
     author: "by Playson",
   },
   {
@@ -41,7 +41,7 @@ const topGames: ITopGamesType[] = [
     imageSrc: "/images/top-games/bandits.png",
     title: "Clash Bandits 3",
     rating: 9.8,
-    rtp: 95,
+    payout: "95",
     author: "by RTG",
   },
   {
@@ -49,7 +49,7 @@ const topGames: ITopGamesType[] = [
     imageSrc: "/images/top-games/frog.png",
     title: "Frog Fortunes",
     rating: 9.8,
-    rtp: 95,
+    payout: "95",
     author: "by RTG",
   },
   {
@@ -57,7 +57,7 @@ const topGames: ITopGamesType[] = [
     imageSrc: "/images/top-games/icewin.png",
     title: "IC Wins",
     rating: 9.8,
-    rtp: 95,
+    payout: "95",
     author: "by RTG",
   },
 ];

@@ -1,18 +1,18 @@
 import React, { FC } from "react";
-import { ITopCasino } from "../../../../types/ITopCasino";
-import s from "./casinoCard.module.scss";
+import s from "./customCard.module.scss";
 import Image from "next/image";
-import Heading from "../../../heading/Heading";
+import Heading from "@/components/heading/Heading";
+import { ITopGamesType } from "@/types/ITopGamesType";
 
-type CasinoCardType = { data: ITopCasino };
-
-const CasinoCard: FC<CasinoCardType> = ({ data }) => {
+const CustomCard: FC<{ data: ITopGamesType }> = ({ data }) => {
   return (
     <div className={s.card}>
       <Image src={data.imageSrc} width={80} height={60} alt={data.title} />
-
       <div className={s.content}>
-        <Heading tag={"h3"} text={data.title}></Heading>
+        <div className={s["header-wrapper"]}>
+          <Heading tag={"h3"} text={data.title}></Heading>
+          {data.author && <span>{data.author}</span>}
+        </div>
         <div className={s["info-wrapper"]}>
           <div className={s.info}>
             <div className={s.rating}>
@@ -21,7 +21,7 @@ const CasinoCard: FC<CasinoCardType> = ({ data }) => {
               </svg>
             </div>
             <div className={s["info-descr"]}>
-              <div>{data.casinoRating}</div>
+              <div>{data.rating}</div>
               <div>User Rating</div>
             </div>
           </div>
@@ -34,7 +34,7 @@ const CasinoCard: FC<CasinoCardType> = ({ data }) => {
             </div>
             <div className={s["info-descr"]}>
               <div>{data.payout}</div>
-              <div>Payout %</div>
+              <div>% RTP</div>
             </div>
           </div>
         </div>
@@ -43,4 +43,4 @@ const CasinoCard: FC<CasinoCardType> = ({ data }) => {
   );
 };
 
-export default CasinoCard;
+export default CustomCard;

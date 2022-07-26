@@ -1,6 +1,6 @@
-@use "reset";
 @use "variables";
 @use "mixins" as m;
+@use "custom/collapse.scss";
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
 
 // Css Vars
@@ -20,6 +20,7 @@
   --blue-color-3: #12395d;
   //gray-colors
   --gray-light: #f5f5f5;
+  --grey-color-1: rgb(158, 158, 158);
 
   .admin-bar {
     --header-offset: 32px;

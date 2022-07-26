@@ -7,7 +7,7 @@ const BonusCard: FC<BonusCardProps> = ({ data }) => {
   return (
     <div className={s.card}>
       <Image src={data.imageSrc} alt="bonus" width={80} height={60} />
-      <div className={s.card__content}>
+      <div className={s["card-content"]}>
         {data.isExclusive && (
           <span className={s.exclusive}>
             <Image
@@ -23,7 +23,7 @@ const BonusCard: FC<BonusCardProps> = ({ data }) => {
           <span>${data.bonus}</span>
         </div>
         <div>+ {data.freeSpins} Free Spins</div>
-        <svg className={s.btn__icon}>
+        <svg className={s["btn-icon"]}>
           <use href="/sprite.svg#points" width={4} height={20}></use>
         </svg>
       </div>

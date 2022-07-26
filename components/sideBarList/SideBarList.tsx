@@ -6,7 +6,7 @@ import AreGames from "./areGames/AreGames";
 
 type Variants = "areCasinos" | "areBonuses" | "areSlotGames";
 
-interface ISideBarListProps {
+export interface ISideBarListProps {
   variants: Variants[];
 }
 

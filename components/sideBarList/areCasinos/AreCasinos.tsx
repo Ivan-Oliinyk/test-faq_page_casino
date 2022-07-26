@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
 import { fetchTopCasino } from "@/reducers/topCasinoReducer/ActionCreator";
 import Heading from "@/components/heading/Heading";
-import CasinoCard from "./casinoCard/CasinoCard";
+import CustomCard from "../customCard/CustomCard";
 
 const AreCasinos = ({}) => {
   const { topCasinos, error, isLoading } = useAppSelector(
@@ -23,7 +23,7 @@ const AreCasinos = ({}) => {
         {isLoading && <p>Loading data...</p>}
         {error && <p>Error with loading data!</p>}
         {topCasinos.length &&
-          topCasinos.map((item) => <CasinoCard key={item.id} data={item} />)}
+          topCasinos.map((item) => <CustomCard key={item.id} data={item} />)}
       </div>
     </div>
   );

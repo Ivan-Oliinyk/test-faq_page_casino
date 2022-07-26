@@ -2,9 +2,9 @@
 
 .form {
   input {
-    padding: 7px;
-    border: 1px solid var(--blue-color-2);
-    border-radius: 6px;
+    padding: 0.7rem;
+    border: 0.1rem solid var(--blue-color-2);
+    border-radius: 0.6rem;
     color: var(--blue-color-2);
     transition: border 0.3s linear;
     @include m.font($fs: 1.4rem, $fw: 400, $lh: 1.2);
@@ -15,7 +15,7 @@
 
     &:hover,
     &:focus {
-      border: 1px solid var(--blue-color-1);
+      border: 0.1rem solid var(--blue-color-1);
     }
   }
 }

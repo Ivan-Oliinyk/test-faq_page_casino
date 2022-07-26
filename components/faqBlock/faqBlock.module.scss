@@ -1,7 +1,6 @@
 @use "styles/mixins" as m;
 
 .wrapper {
-  max-width: 1100px;
   padding: 2.8rem;
   background-color: var(--white-color);
 }
@@ -18,19 +17,19 @@
 .content-body-wrapper {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  inline-size: 100%;
 }
 
 .content-body {
-  min-width: 32rem;
-  max-width: 32rem;
+  min-inline-size: 32rem;
+  max-inline-size: 32rem;
   display: flex;
   flex-direction: column;
 }
 
 @media screen and (max-width: m.bp("xxl")) {
   .wrapper {
-    max-width: 720px;
+    max-inline-size: 72rem;
   }
 }
 
@@ -42,15 +41,15 @@
 
 @media screen and (min-width: m.bp("lg")) and (max-width: m.bp("xl")) {
   .content-body {
-    min-width: 48%;
-    max-width: 48%;
+    min-inline-size: 48%;
+    max-inline-size: 48%;
   }
 }
 
 @media screen and (max-width: m.bp("lg")) {
   .content-body {
-    min-width: 100%;
-    max-width: 100%;
+    max-inline-size: 100%;
+    min-inline-size: 100%;
     display: flex;
     flex-direction: column;
   }

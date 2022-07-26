@@ -3,6 +3,6 @@ export interface ITopGamesType {
   imageSrc: string;
   title: string;
   rating: number;
-  rtp: number;
-  author: string;
+  payout: string;
+  author?: string;
 }

@@ -1,10 +1,10 @@
 @use "styles/mixins" as m;
 
 .wrapper {
-  margin-bottom: 4%;
+  margin-block-end: 4%;
 
   h1 {
-    margin-bottom: 1.8%;
+    margin-block-end: 1.8%;
     color: var(--blue-color-1);
   }
 
@@ -15,12 +15,12 @@
     .img-wrapper {
       display: flex;
       justify-content: center;
-      min-width: 200px;
-      max-height: 140px;
+      min-inline-size: 20rem;
+      max-inline-size: 14rem;
     }
 
     .descr {
-      margin: 22px 0;
+      margin: 2.2rem 0;
       font-size: 2rem;
       font-weight: 400;
       line-height: 2.4rem;

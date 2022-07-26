@@ -1,0 +1,16 @@
+.custom-collapse {
+  .collapse {
+    &:not(.show) {
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+      max-block-size: 8rem;
+      overflow: hidden;
+    }
+  }
+
+  .collapsing {
+    min-height: 8rem;
+  }
+}
