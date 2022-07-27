@@ -11,7 +11,6 @@
 
 .content-body-wrapper {
   display: grid;
-  // inline-size: 100%;
 }
 
 .content-body {
@@ -24,6 +23,7 @@
 @media screen and (min-width: m.bp("lg")) {
   .content-body-wrapper {
     grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
     gap: 2rem;
   }
 
@@ -49,6 +49,6 @@
 
 @media screen and (min-width: m.bp("xxl")) {
   .content-body-wrapper {
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(3, 1fr);
   }
 }

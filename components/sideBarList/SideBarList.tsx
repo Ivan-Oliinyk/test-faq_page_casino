@@ -1,8 +1,8 @@
 import React, { FC } from "react";
-import AreCasinos from "./areCasinos/AreCasinos";
+import AreCasinos from "./AreCasinos";
 import s from "./sideBar.module.scss";
-import AreBonuses from "./areBonuses/AreBonuses";
-import AreGames from "./areGames/AreGames";
+import AreBonuses from "./AreBonuses";
+import AreGames from "./AreGames";
 
 type Variants = "areCasinos" | "areBonuses" | "areSlotGames";
 

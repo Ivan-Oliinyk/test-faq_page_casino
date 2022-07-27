@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import s from "./customCard.module.scss";
+import s from "./ratingCard.module.scss";
 import Image from "next/image";
 import Heading from "@/components/heading/Heading";
 import { ITopGamesType } from "@/types/ITopGamesType";
