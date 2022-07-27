@@ -1,9 +1,7 @@
 @use "styles/mixins" as m;
 
 .wrapper {
-  min-width: var(--small-column-desktop-width);
-  margin-block-start: 2rem;
-  transform: none;
+  inline-size: var(--small-column-desktop-width);
 
   h2 {
     margin-block-end: 1rem;
@@ -12,13 +10,5 @@
 
   & > div:not(:last-of-type) {
     margin-block-end: 2.5rem;
-  }
-}
-
-@media screen and (min-width: m.bp("sm")) {
-  .wrapper {
-    padding: 0;
-    margin: 0 1rem;
-    transform: translateX(calc(var(--math) * 2rem));
   }
 }

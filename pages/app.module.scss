@@ -8,26 +8,28 @@
 
 .main {
   background-color: var(--gray-light);
+  padding: 3rem 0;
 }
 
 .container {
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  inline-size: 100%;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  gap: 2rem;
+  grid-template-areas:
+    "content"
+    "side-bar";
+}
+
+.content {
+  grid-area: content;
+}
+
+.side-bar {
+  grid-area: side-bar;
+  justify-self: center;
 }
 
 @media screen and (min-width: m.bp("md")) {
   .container {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-}
-
-@media screen and (min-width: m.bp("xxl")) {
-  .container {
-    margin: 0 auto;
+    grid-template-areas: "content side-bar";
   }
 }

@@ -28,9 +28,13 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <main className={`${s.main}`}>
           <div className="container">
             <div className={s.container}>
-              <Component {...pageProps} />
+              <div className={s.content}>
+                <Component {...pageProps} />
+              </div>
               {pageProps.SideBarList && (
-                <SideBarList variants={[...pageProps.SideBarList]} />
+                <div className={s["side-bar"]}>
+                  <SideBarList variants={[...pageProps.SideBarList]} />
+                </div>
               )}
             </div>
           </div>

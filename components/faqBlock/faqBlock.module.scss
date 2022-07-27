@@ -3,7 +3,6 @@
 .wrapper {
   padding: 2rem;
   background-color: var(--white-color);
-  max-inline-size: 72rem;
 }
 
 .content-header {
@@ -11,27 +10,26 @@
 }
 
 .content-body-wrapper {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
   inline-size: 100%;
 }
 
 .content-body {
-  max-inline-size: 100%;
-  min-inline-size: 100%;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  gap: 2.8rem;
+  grid-template-rows: minmax(15rem, auto);
+  align-self: start;
 }
 
 @media screen and (min-width: m.bp("lg")) {
-  .content-body {
-    min-inline-size: 32rem;
-    max-inline-size: 32rem;
+  .content-body-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
 
   .content-header {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto;
 
     h2 {
       color: var(--blue-color-1);
@@ -39,26 +37,18 @@
   }
 }
 
-@media screen and (min-width: m.bp("lg")) and (max-width: m.bp("xl")) {
-  .content-body {
-    min-inline-size: 48%;
-    max-inline-size: 48%;
-  }
-}
-
 @media screen and (min-width: m.bp("xl")) {
   .wrapper {
     padding: 2.8rem;
   }
+
+  .content-body-wrapper {
+    gap: 4rem;
+  }
 }
 
 @media screen and (min-width: m.bp("xxl")) {
-  .wrapper {
-    max-inline-size: 100%;
-
-    .content-body {
-      min-inline-size: calc((100% / 3) - 1.5rem);
-      max-inline-size: calc((100% / 3) - 1.5rem);
-    }
+  .content-body-wrapper {
+    grid-template-columns: repeat(3, auto);
   }
 }

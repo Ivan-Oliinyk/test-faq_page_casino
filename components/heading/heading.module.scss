@@ -1,5 +1,15 @@
 @use "styles/mixins" as m;
 
+h1.title,
+h2.title,
+h3.title,
+h4.title,
+h5.title,
+h6.title {
+  margin: 0;
+  padding: 0;
+}
+
 h1.title {
   @include m.fluid-type(m.bp("xs"), m.bp("xxxl"), 32px, 42px);
   font-weight: 700;

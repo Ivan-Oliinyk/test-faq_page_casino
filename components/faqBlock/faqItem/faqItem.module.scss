@@ -2,7 +2,6 @@
 
 .wrapper {
   position: relative;
-  margin-block-start: 2.8rem;
   border-block-end: 1px solid var(--blue-color-2);
   min-block-size: 15rem;
 
@@ -15,13 +14,13 @@
   }
 
   .header-wrapper {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.8rem;
   }
 
   .header-icon {
     display: block;
-    margin: 0 0.4rem;
-    transform: translateX(calc(var(--math) * -0.4rem));
     inline-size: 2.8rem;
     min-inline-size: 2.8rem;
     block-size: 2.8rem;
