@@ -25,12 +25,14 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           <title>{pageProps.title}</title>
         </Head>
         <header className={s.header}>header</header>
-        <main className={s.main}>
-          <div className={s.container}>
-            <Component {...pageProps} />
-            {pageProps.SideBarList && (
-              <SideBarList variants={[...pageProps.SideBarList]} />
-            )}
+        <main className={`${s.main}`}>
+          <div className="container">
+            <div className={s.container}>
+              <Component {...pageProps} />
+              {pageProps.SideBarList && (
+                <SideBarList variants={[...pageProps.SideBarList]} />
+              )}
+            </div>
           </div>
         </main>
         <footer className={s.footer}>footer</footer>

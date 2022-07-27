@@ -55,5 +55,10 @@
 @media screen and (min-width: m.bp("xxl")) {
   .wrapper {
     max-inline-size: 100%;
+
+    .content-body {
+      min-inline-size: calc((100% / 3) - 1.5rem);
+      max-inline-size: calc((100% / 3) - 1.5rem);
+    }
   }
 }

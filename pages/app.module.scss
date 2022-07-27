@@ -19,12 +19,6 @@
   align-items: center;
 }
 
-@media screen and (min-width: m.bp("xs")) {
-  .container {
-    padding: 0 2rem;
-  }
-}
-
 @media screen and (min-width: m.bp("md")) {
   .container {
     flex-direction: row;
@@ -34,7 +28,6 @@
 
 @media screen and (min-width: m.bp("xxl")) {
   .container {
-    max-inline-size: 144rem;
     margin: 0 auto;
   }
 }
