@@ -3,42 +3,15 @@
 .wrapper {
   position: relative;
   margin-block-start: 2.8rem;
-  // padding-block-end: 1rem;
   border-block-end: 1px solid var(--blue-color-2);
   min-block-size: 15rem;
-  // max-block-size: 15rem;
 
-  &.show-content {
-    // max-block-size: 50rem;
+  &:first-of-type {
+    margin-block-start: 0;
   }
 
   .description {
     @include m.font(1.6rem, 400, 1.2);
-    // display: block;
-
-    &.show {
-      color: red;
-    }
-    &.collapse:not(.show) {
-      color: red;
-      display: block;
-      max-height: 2rem;
-    }
-
-    // transition: max-block-size 0.5s ease-in;
-    // overflow: hidden;
-
-    &.hide {
-      max-block-size: 8.5rem;
-      display: -webkit-box;
-      -webkit-line-clamp: 4;
-      -webkit-box-orient: vertical;
-      text-overflow: ellipsis;
-    }
-
-    &.show {
-      max-block-size: 50rem;
-    }
   }
 
   .header-wrapper {
@@ -76,26 +49,10 @@
   }
 }
 
-@media screen and (max-width: m.bp("lg")) {
+@media screen and (min-width: m.bp("lg")) {
   .wrapper {
-    min-block-size: 16rem;
-    max-block-size: 16rem;
-
-    .description.hide {
-      min-block-size: 10rem;
-      max-block-size: 10rem;
-      -webkit-line-clamp: 5;
-    }
-
     &:first-of-type {
-      margin-top: 0;
+      margin-block-start: 2.8rem;
     }
-  }
-}
-
-@media screen and (max-width: m.bp("sm")) {
-  .wrapper {
-    min-block-size: 16rem;
-    max-block-size: 16rem;
   }
 }

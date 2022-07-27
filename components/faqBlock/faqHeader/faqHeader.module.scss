@@ -9,29 +9,29 @@
   }
 
   .content {
-    display: flex;
-    align-items: center;
-
-    .img-wrapper {
-      display: flex;
-      justify-content: center;
-      min-inline-size: 20rem;
-      max-inline-size: 14rem;
-    }
-
-    .descr {
-      margin: 2.2rem 0;
-      font-size: 2rem;
-      font-weight: 400;
-      line-height: 2.4rem;
-    }
+    display: none;
   }
 }
 
-@media screen and (max-width: m.bp("lg")) {
+@media screen and (min-width: m.bp("lg")) {
   .wrapper {
     .content {
-      display: none;
+      display: flex;
+      align-items: center;
+
+      .img-wrapper {
+        display: flex;
+        justify-content: center;
+        min-inline-size: 20rem;
+        max-inline-size: 14rem;
+      }
+
+      .descr {
+        margin: 2.2rem 0;
+        font-size: 2rem;
+        font-weight: 400;
+        line-height: 2.4rem;
+      }
     }
   }
 }

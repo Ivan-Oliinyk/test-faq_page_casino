@@ -1,11 +1,9 @@
 @use "styles/mixins" as m;
 
-$dir-index: calc(var(--math) * 1);
-
 .wrapper {
-  margin: 0 1rem;
-  transform: translateX(calc(var(--math) * 20px));
   min-width: var(--small-column-desktop-width);
+  margin-block-start: 2rem;
+  transform: none;
 
   h2 {
     margin-block-end: 1rem;
@@ -13,15 +11,14 @@ $dir-index: calc(var(--math) * 1);
   }
 
   & > div:not(:last-of-type) {
-    // margin-bottom: 2.5rem;
     margin-block-end: 2.5rem;
   }
 }
 
-@media screen and (max-width: m.bp("sm")) {
+@media screen and (min-width: m.bp("sm")) {
   .wrapper {
-    padding: 2rem 0;
-    margin: 0;
-    transform: none;
+    padding: 0;
+    margin: 0 1rem;
+    transform: translateX(calc(var(--math) * 2rem));
   }
 }

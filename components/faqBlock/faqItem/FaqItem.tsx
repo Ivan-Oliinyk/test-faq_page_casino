@@ -11,40 +11,6 @@ const FaqItem: FC<FaqItemType> = ({ id, title, description }) => {
     str.length > strLength;
 
   return (
-    // <div
-    //   className={
-    //     showMore ? `${s.wrapper + " " + s["show-content"]}` : s.wrapper
-    //   }
-    // >
-    //   <div className={s["header-wrapper"]}>
-    //     <svg className={s["header-icon"]}>
-    //       <use href="/sprite.svg#icon-Frame"></use>
-    //     </svg>
-    //     <Heading text={title} tag="h3" />
-    //   </div>
-
-    //   <div
-    //     className={
-    //       !showMore
-    //         ? `${s.description + " " + s.hide}`
-    //         : `${s.description + " " + s.show}`
-    //     }
-    //     dangerouslySetInnerHTML={{ __html: description }}
-    //   ></div>
-    //   {isLongString(description) && (
-    //     <button type="button" onClick={() => setShowMore(!showMore)}>
-    //       {showMore ? (
-    //         <svg className={s["btn-icon"]}>
-    //           <use href="/sprite.svg#icon-plus"></use>
-    //         </svg>
-    //       ) : (
-    //         <svg className={s["btn-icon"]}>
-    //           <use href="/sprite.svg#icon-minus"></use>
-    //         </svg>
-    //       )}
-    //     </button>
-    //   )}
-    // </div>
     <div className={`${s.wrapper}`}>
       <div className={s["header-wrapper"]}>
         <svg className={s["header-icon"]}>

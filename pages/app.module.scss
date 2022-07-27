@@ -3,7 +3,7 @@
 .header,
 .footer {
   min-block-size: 5rem;
-  background-color: var(--grey-color-1);
+  background-color: var(--bs-gray-500);
 }
 
 .main {
@@ -11,28 +11,30 @@
 }
 
 .container {
-  padding: 0 2rem;
+  padding: 0;
   display: flex;
   justify-content: center;
   inline-size: 100%;
+  flex-direction: column;
+  align-items: center;
 }
 
-@media screen and (min-width: m.bp("xxxl")) {
+@media screen and (min-width: m.bp("xs")) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+@media screen and (min-width: m.bp("md")) {
+  .container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+@media screen and (min-width: m.bp("xxl")) {
   .container {
     max-inline-size: 144rem;
     margin: 0 auto;
-  }
-}
-
-@media screen and (max-width: m.bp("md")) {
-  .container {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-@media screen and (max-width: m.bp("xs")) {
-  .main {
-    padding: 0;
   }
 }

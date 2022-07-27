@@ -77,6 +77,7 @@ const FaqBlock: FC<FaqBlockType> = ({ showHeader = true }) => {
             <div className={s["content-body"]}>
               {data.map((item: DataType) => (
                 <FaqItem
+                  id={item.id}
                   key={item.id}
                   title={item.title}
                   description={item.description}
