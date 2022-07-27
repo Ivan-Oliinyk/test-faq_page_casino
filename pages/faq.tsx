@@ -1,14 +1,7 @@
 import { GetStaticProps } from "next";
-import { FC } from "react";
 import FaqBlock from "../components/faqBlock/FaqBlock";
-import { ISideBarListProps } from "../components/sideBarList/SideBarList";
 
-type FaqTypes = {
-  title: string;
-  sideBarList: ISideBarListProps;
-};
-
-const Faq: FC<FaqTypes> = () => {
+const Faq = () => {
   return <FaqBlock />;
 };
 
